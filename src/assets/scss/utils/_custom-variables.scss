@@ -1,3 +1,10 @@
 $body-font-family: 'Poppins', sans-serif;
 
-/* Button */
+/* Textfield and Input */
+$input-font-size: 12px;
+$text-field-dense-padding: 7px 0 7px;
+
+$btn-text-transform: normal;
+$btn-sizes: (
+    'small': 30,
+);

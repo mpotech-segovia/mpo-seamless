@@ -16,11 +16,77 @@
         }
     }
 
-    .theme--light {
-        &.v-input {
-            input {
+    &-form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+
+            .v-text-field {
+                margin-top: 0;
+            }
+
+            .theme--light {
+                &.v-input {
+                    
+                    input {
+                        color: $c-white;
+                    }
+        
+                    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: $c-white;
+                        opacity: 1; /* Firefox */
+                    }
+                    
+                    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: $c-white;
+                    }
+                    
+                    ::-ms-input-placeholder { /* Microsoft Edge */
+                    color: $c-white;
+                    }
+                }
+        
+                &.v-label {
+                    color: $c-white;
+                    font-size: 13px;
+                }
+            }
+        
+            .v-text-field {
+                .v-input__control {
+                    background: #284077;
+                }
+            }
+        }
+        .form-button {
+            .v-btn {
+                min-width: 80px;
+            }
+            .login {
+                background: $secondary-gradient;
                 color: $c-white;
             }
+            .register {
+                background: $primary-gradient;
+                color: $c-white;
+            }
+        }
+    }
+
+    &-forgot {
+        font-size: 11px;
+        font-style: italic;
+        text-align: right;
+        margin-top: 5px;
+
+        a {
+            text-decoration: none;
+            color: $c-white !important;
         }
     }
 }
