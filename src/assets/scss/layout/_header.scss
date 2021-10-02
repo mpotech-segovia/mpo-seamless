@@ -1,0 +1,26 @@
+@use "../utils/index.scss" as *;
+
+.header {
+    background: $header-color;
+    color: $header-text;
+    font-size: 13px;
+
+    &-marquee {
+        display: flex;
+        align-items: center;
+
+        .v-icon {
+            color: $secondary-color;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    .theme--light {
+        &.v-input {
+            input {
+                color: $c-white;
+            }
+        }
+    }
+}
