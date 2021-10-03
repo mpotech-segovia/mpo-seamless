@@ -31,9 +31,6 @@
 				},
 				{
 					imgSrc: require('@/assets/slider-img/slider-1.jpg')
-				},
-				{
-					imgSrc: require('@/assets/slider-img/slider-1.jpg')
 				}],
 				jackpot: 'IDR 255,778,920',
 			}
