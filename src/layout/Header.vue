@@ -40,12 +40,11 @@ export default {
     data() {
         return {
             date: null,
-            // headerDate: 'Header Date',
         }
     },
     methods: {
         headerDate() {
-        this.date = moment().format('ddd, MMMM D, h:mm:ss A');
+            this.date = moment().format('ddd, MMMM D, h:mm:ss A');
         },
     },
     created() {

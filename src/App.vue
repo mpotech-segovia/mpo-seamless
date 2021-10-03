@@ -27,6 +27,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "@/assets/scss/layout/_header.scss";
-  @import "@/assets/scss/layout/_navbar.scss";
+  @import "@/assets/scss/layout/_index.scss";
 </style>

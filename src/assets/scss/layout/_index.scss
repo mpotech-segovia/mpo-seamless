@@ -1,0 +1,8 @@
+@use "../utils/_index.scss" as *;
+@import "./_header.scss";
+@import "./_navbar.scss";
+
+.v-main {
+    background: $background;
+    color: $background-text;
+}
