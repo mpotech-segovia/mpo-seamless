@@ -13,7 +13,7 @@
                                 <div class="icon inactive">
                                     <img :src="item.iconSrcInactive" alt="">
                                 </div>
-                                <div class="nav-title mt-1">{{ item.title }}</div>
+                                <div class="nav-title mt-2">{{ item.title }}</div>
                             </div>
                         </a>
                     </span>

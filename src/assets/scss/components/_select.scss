@@ -1,0 +1,18 @@
+@use "../utils/_index.scss" as *;
+
+.v-select {
+    .v-input__slot {
+        background: #284077 !important;
+    }
+    .v-select__selections {
+        color: $c-white !important;
+        font-size: 16px;
+    }
+    .v-label {
+        color: $c-white;
+    }
+    .v-icon {
+        color: $c-white;
+        font-size: 18px;
+    }
+}

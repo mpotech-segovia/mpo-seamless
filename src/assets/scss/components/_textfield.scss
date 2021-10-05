@@ -1,0 +1,23 @@
+@use "../utils/_index.scss" as *;
+
+.v-text-field {
+    margin-top: 0;
+    .v-input__slot {
+        background: #284077 !important;
+    }
+    .v-select__selections {
+        color: $c-white !important;
+        font-size: 16px;
+    }
+    .v-label {
+        color: $c-white;
+        top: calc(50% - 10px);
+        font-size: 15px;
+    }
+    input {
+        color: $c-white !important;
+    }
+    .v-icon {
+        color: rgba(255,255,255,0.7);
+    }
+}

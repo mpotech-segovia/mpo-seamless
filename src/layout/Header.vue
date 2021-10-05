@@ -3,20 +3,20 @@
         <v-container>
             <div class="header__cont">
                 <v-row>
-                    <v-col xl="2" lg="2" align-self="center">
+                    <v-col xl="2" lg="2" md="3" align-self="center">
                         <div class="header-date">{{ date }}</div>
                     </v-col>
-                    <v-col xl="5" lg="4" align-self="center">
+                    <v-col xl="5" lg="10" md="9" align-self="center">
                         <div class="header-marquee">
                             <v-icon>fas fa-bell</v-icon>
                             <marquee>Selamat datang di MPOPLAY Bandar Judi Online Terpercaya!!</marquee>
                         </div>
                     </v-col>
-                    <v-col xl="5" lg="6">
+                    <v-col xl="5" lg="12" md="12">
                         <div class="header-form">
                             <div class="form-group">
-                                <v-text-field class="mr-2" placeholder="Username" type="text" rounded hide-details dense></v-text-field>
-                                <v-text-field placeholder="Password" type="password" rounded hide-details dense></v-text-field>
+                                <v-text-field class="mr-2" label="Username" type="text" solo rounded hide-details dense></v-text-field>
+                                <v-text-field label="Password" type="password" solo rounded hide-details dense></v-text-field>
                             </div>
                             <div class="form-button">
                                 <v-btn class="login mr-2" rounded small>Masuk</v-btn>
