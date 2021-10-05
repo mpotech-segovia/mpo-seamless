@@ -115,18 +115,39 @@
             padding: 20px 25px;
             background: $primary-color;
             border-radius: $border-radius;
+            box-shadow: $box-shadow;
             
-            .list-type {
+            .list-title {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
 
                 .list-search {
                     margin-left: auto;
                     width: 250px;
+
                     .v-text-field {
                         .v-input__slot {
                             border-radius: $border-radius;
                             min-width: 150px;
+                        }
+                    }
+                }
+            }
+
+            .list-grid {
+                display: grid;
+                grid-gap: 15px;
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                margin-top: 25px;
+                .game-holder {
+                    text-align: center;
+                    .game-img {
+                        img {
+                            border-radius: $border-radius;
+                            height: 145px;
+                            width: 100%;
+                            object-fit: contain;
                         }
                     }
                 }

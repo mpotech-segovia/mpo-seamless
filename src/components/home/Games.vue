@@ -37,11 +37,25 @@
                 </div>
             </div>
             <div class="game-list">
-                <div class="list-type">
+                <div class="list-title">
                     <h2>Popular</h2>
                     <div class="list-search">
                         <v-text-field label="Search" solo hide-details flat append-icon="fas fa-search"></v-text-field>
                     </div>
+                </div>
+                <div class="list-grid">
+                    <!-- <v-row> -->
+                        <!-- <v-col xl="2" lg="3" md="4" sm="6" v-for="(item, i) in gameList" :key="i"> -->
+                            <div class="game-holder" v-for="(item, i) in gameList" :key="i">
+                                <a :href="item.link">
+                                    <div class="game-img">
+                                        <img :src="item.imgSrc" alt="">
+                                    </div>
+                                    <h5 class="game-title">{{ item.gameTitle }}</h5>
+                                </a>
+                            </div>
+                        <!-- </v-col> -->
+                    <!-- </v-row> -->
                 </div>
             </div>
         </v-container>
@@ -54,7 +68,62 @@
 
         data() {
             return {
-                provider: ['Pragmatic Play', 'ISOFTBET', 'YGGDRASIL', 'Spadegaming', 'PLAYnGO', 'CQ9']
+                provider: ['Pragmatic Play', 'ISOFTBET', 'YGGDRASIL', 'Spadegaming', 'PLAYnGO', 'CQ9'],
+                gameList: [{
+                    imgSrc: require('@/assets/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },]
             }
         }
     }
