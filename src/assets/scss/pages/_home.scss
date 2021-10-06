@@ -55,6 +55,7 @@
                 min-height: 65px;
                 border-radius: $border-radius;
                 overflow: hidden;
+                @include transition(0.15s);
 
                 .game-title {
                     padding: 8px 15px;
@@ -93,6 +94,7 @@
 
                 &:hover {
                     filter: grayscale(100%);
+                    @include transition(0.15s);
                 }
             }
 
@@ -204,12 +206,13 @@
 
             .service-item {
                 margin-top: 30px;
-                min-height: 350px;
+                min-height: 300px;
 
                 .service-header {
                     display: flex;
                     align-items: center;
                     flex-wrap: wrap;
+                    margin-bottom: 30px;
 
                     img {
                         margin-right: 10px;
@@ -225,10 +228,93 @@
 
                 &.service-meter {
                     border-right: 1px solid $background-text;
+                    padding-right: 60px;
+
+                    .meter-item {
+                        .meter-content {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            margin-bottom: 10px;
+
+                            .meter-time {
+                                margin-left: auto;
+                                text-align: center;
+                                border-radius: $border-radius;
+                                background: $primary-gradient;
+                                padding: 10px 5px;
+                                min-width: 66px;
+                            }
+
+                            h3, h5 {
+                                font-weight: 500;
+                            }
+                        }
+                        .meter-progress {
+                            .v-progress-linear {
+                                .v-progress-linear__background {
+                                    &.primary {
+                                        background: transparent;
+                                        border: 0;
+                                        border-radius: 50px;
+                                    }
+                                }
+                                .v-progress-linear__buffer {
+                                    border-radius: 50px;
+                                    border: 1px solid $secondary-color;
+                                    background: $c-white !important;
+                                }
+                                .v-progress-linear__determinate {
+                                    &.primary {
+                                        background: $primary-gradient !important;
+                                        border-radius: 50px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 
                 &.payment {
                     border-right: 1px solid $background-text;
+                }
+
+                &.help-support {
+                    padding-left: 40px;
+                    a {
+                        text-decoration: none;
+                        color: $background-text;
+                    }
+                    .support-item {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        margin-bottom: 15px;
+                        padding: 10px 15px;
+                        background: rgba(0,0,0,0.2);
+                        border-radius: $border-radius;
+                        width: 280px;
+                        border: 1px solid rgba(255,255,255,0.1);
+                        @include transition(0.15s);
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            object-fit: contain;
+                            object-position: center;
+                        }
+
+                        h4 {
+                            margin-left: 15px;
+                            font-weight: 500;
+                        }
+
+                        &:hover {
+                            border: 1px solid rgba(255,255,255,0.3);
+                            box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+                            @include transition(0.15s);
+                        }
+                    }
                 }
             }
         }
