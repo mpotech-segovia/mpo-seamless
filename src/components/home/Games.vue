@@ -40,22 +40,18 @@
                 <div class="list-title">
                     <h2>Popular</h2>
                     <div class="list-search">
-                        <v-text-field label="Search" solo hide-details flat append-icon="fas fa-search"></v-text-field>
+                        <v-text-field label="Search" v-model="searchGame" solo hide-details flat clearable append-icon="fas fa-search"></v-text-field>
                     </div>
                 </div>
                 <div class="list-grid">
-                    <!-- <v-row> -->
-                        <!-- <v-col xl="2" lg="3" md="4" sm="6" v-for="(item, i) in gameList" :key="i"> -->
-                            <div class="game-holder" v-for="(item, i) in gameList" :key="i">
-                                <a :href="item.link">
-                                    <div class="game-img">
-                                        <img :src="item.imgSrc" alt="">
-                                    </div>
-                                    <h5 class="game-title">{{ item.gameTitle }}</h5>
-                                </a>
+                    <div class="game-holder" v-for="(item, i) in filteredGame" :key="i">
+                        <a :href="item.link">
+                            <div class="game-img">
+                                <img :src="item.imgSrc" alt="">
                             </div>
-                        <!-- </v-col> -->
-                    <!-- </v-row> -->
+                            <h5 class="game-title">{{ item.gameTitle }}</h5>
+                        </a>
+                    </div>
                 </div>
             </div>
         </v-container>
@@ -69,6 +65,7 @@
         data() {
             return {
                 provider: ['Pragmatic Play', 'ISOFTBET', 'YGGDRASIL', 'Spadegaming', 'PLAYnGO', 'CQ9'],
+                searchGame: '',
                 gameList: [{
                     imgSrc: require('@/assets/game-img/1.jpg'),
                     gameTitle: 'Phoenix Forge',
@@ -80,50 +77,57 @@
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/1.jpg'),
-                    gameTitle: 'Phoenix Forge',
+                    imgSrc: require('@/assets/game-img/3.jpg'),
+                    gameTitle: 'Heart of Rio',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/2.jpg'),
-                    gameTitle: 'Empty The Bank',
+                    imgSrc: require('@/assets/game-img/4.jpg'),
+                    gameTitle: 'Lucky Lighting',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/1.jpg'),
-                    gameTitle: 'Phoenix Forge',
+                    imgSrc: require('@/assets/game-img/5.jpg'),
+                    gameTitle: 'Dragon Hot Hold And Spin',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/2.jpg'),
-                    gameTitle: 'Empty The Bank',
+                    imgSrc: require('@/assets/game-img/6.jpg'),
+                    gameTitle: '5 Lion Megaway',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/1.jpg'),
-                    gameTitle: 'Phoenix Forge',
+                    imgSrc: require('@/assets/game-img/7.jpg'),
+                    gameTitle: 'Cash Evalator',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/2.jpg'),
-                    gameTitle: 'Empty The Bank',
+                    imgSrc: require('@/assets/game-img/8.jpg'),
+                    gameTitle: 'Hokkaido Wolf',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/1.jpg'),
-                    gameTitle: 'Phoenix Forge',
+                    imgSrc: require('@/assets/game-img/9.jpg'),
+                    gameTitle: 'Cash Evalator',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/2.jpg'),
-                    gameTitle: 'Empty The Bank',
+                    imgSrc: require('@/assets/game-img/10.jpg'),
+                    gameTitle: 'The Magic Gaudron',
                     link: '#',
                 },
                 {
-                    imgSrc: require('@/assets/game-img/2.jpg'),
-                    gameTitle: 'Empty The Bank',
+                    imgSrc: require('@/assets/game-img/11.jpg'),
+                    gameTitle: 'Bigger Bass Bonanza',
                     link: '#',
                 },]
+            }
+        },
+        computed: {
+            filteredGame() {
+                return this.gameList.filter(item => {
+                    return item.gameTitle.toLowerCase().includes(this.searchGame.toLowerCase())
+                })
             }
         }
     }

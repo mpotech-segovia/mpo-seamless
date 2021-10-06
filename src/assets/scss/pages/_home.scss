@@ -116,6 +116,7 @@
             background: $primary-color;
             border-radius: $border-radius;
             box-shadow: $box-shadow;
+            min-height: 600px;
             
             .list-title {
                 display: flex;
@@ -138,16 +139,53 @@
             .list-grid {
                 display: grid;
                 grid-gap: 15px;
-                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 margin-top: 25px;
+
                 .game-holder {
                     text-align: center;
+                    background: rgba(0,0,0,0.3);
+                    border-radius: $border-radius;
+                    border: 1px solid rgba(255,255,255,0.15);
+                    @include transition(0.15s);
+
+                    a {
+                        text-decoration: none;
+                        color: $c-white;
+                    }
+                    
                     .game-img {
+                        padding: 17px 7px 3px;
                         img {
-                            border-radius: $border-radius;
-                            height: 145px;
                             width: 100%;
+                            height: 150px;
                             object-fit: contain;
+                            object-position: center;
+                            @include transition(0.15s);
+                        }
+                    }
+
+                    .game-title {
+                        padding: 0 20px 12px;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        @include transition(0.15s);
+                    }
+
+                    &:hover {
+                        @include transition(0.15s);
+                        box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+
+                        img {
+                            filter: grayscale(100%);
+                            @include transition(0.15s);
+                        }
+
+                        .game-title {
+                            color: $secondary-color;
+                            @include transition(0.15s);
                         }
                     }
                 }
