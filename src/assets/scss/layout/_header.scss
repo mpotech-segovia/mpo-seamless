@@ -2,55 +2,60 @@
 @import "../components/_index.scss";
 
 .header {
-    background: $header-color;
-    color: $header-text;
-    font-size: 13px;
+    z-index: 999;
+    position: sticky;
+    top: -1px;
+    &__top {
+        background: $header-color;
+        color: $header-text;
+        font-size: 13px;
 
-    &-marquee {
-        display: flex;
-        align-items: center;
-
-        .v-icon {
-            color: $secondary-color;
-            font-size: 20px;
-            margin-right: 10px;
-        }
-    }
-
-    &-form {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        .form-group {
+        .header-marquee {
             display: flex;
             align-items: center;
-            margin-right: 20px;
-        }
-        .form-button {
-            .v-btn {
-                min-width: 80px;
-            }
-            .login {
-                background: $secondary-gradient;
-                color: $c-white;
-            }
-            .register {
-                background: $primary-gradient;
-                color: $c-white;
+
+            .v-icon {
+                color: $secondary-color;
+                font-size: 20px;
+                margin-right: 10px;
             }
         }
-    }
 
-    &-forgot {
-        font-size: 11px;
-        font-style: italic;
-        text-align: right;
-        margin-top: 5px;
+        .header-form {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
 
-        a {
-            text-decoration: none;
-            color: $header-text !important;
+            .form-group {
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+            }
+            .form-button {
+                .v-btn {
+                    min-width: 80px;
+                }
+                .login {
+                    background: $secondary-gradient;
+                    color: $c-white;
+                }
+                .register {
+                    background: $primary-gradient;
+                    color: $c-white;
+                }
+            }
+        }
+
+        .header-forgot {
+            font-size: 11px;
+            font-style: italic;
+            text-align: right;
+            margin-top: 5px;
+
+            a {
+                text-decoration: none;
+                color: $header-text !important;
+            }
         }
     }
 }

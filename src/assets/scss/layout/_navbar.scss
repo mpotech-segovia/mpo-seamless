@@ -1,11 +1,9 @@
 @use "../utils/_index.scss" as *;
 
 .navbar {
-    z-index: 999;
-    position: sticky;
-    top: -1px;
     background: $navbar-color;
-    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+    box-shadow: $box-shadow;
 
     &__cont {
         display: flex;
@@ -23,49 +21,103 @@
             align-items: center;
             justify-content: flex-end;
             flex-wrap: wrap;
+            
 
-            .nav-link {
-                text-decoration: none;
-                color: $c-white;
+            .nav-item {
+                .nav-link {
+                    text-decoration: none;
+                    color: $c-white;
 
-                .nav-item {
-                    text-align: center;
-                    padding: 10px 5px 7px;
-                    border-radius: 5px;
-                    margin-left: 5px;
-                    min-width: 85px;
-
-                    .icon {
-                        width: 35px;
-                        height: 35px;
-                        margin: auto;
-
-                        img {
-                            width: 100%;
-                        }
-
-                        &.inactive {
-                            display: none;
-                        }
-                    }
-
-                    .nav-title {
-                        font-size: 12px;
-                        font-weight: 500;
-                        color: $navbar-text;
-                    }
-
-                    &:hover {
-                        box-shadow: 0px 0px 8px 1px $secondary-color;
-
+                    .link-item {
+                        text-align: center;
+                        padding: 8px 4px 7px;
+                        margin-left: 5px;
+                        min-width: 85px;
+                        z-index: 999;
+    
                         .icon {
-                            &.inactive {
-                                display: block;
+                            width: 35px;
+                            height: 35px;
+                            margin: auto;
+    
+                            img {
+                                width: 100%;
                             }
-                            &.active {
+    
+                            &.inactive {
                                 display: none;
                             }
                         }
+    
+                        .nav-title {
+                            font-size: 12px;
+                            font-weight: 500;
+                            color: $navbar-text;
+                        }
+    
+                        &:hover {
+                            background: rgba(0,0,0,0.3);
+
+                            .icon {
+                                &.inactive {
+                                    display: block;
+                                }
+                                &.active {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .nav-provider {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 76px;
+                    z-index: 998;
+                    padding: 10px 0;
+                    background: $page-color;
+                    color: $page-text;
+                    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 23px 0px inset;
+                    display: none;
+                    border-bottom: 5px solid $secondary-color;
+
+                    .provider-item {
+                        display: inline-block;
+                        padding: 0 10px 10px 10px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        position: relative;
+                        text-align: center;
+                        @include transition(0.15s);
+
+                        a {
+                            text-decoration: none;
+                            color: $page-text;
+                        }
+
+                        img {
+                            height: 80px;
+                            width: 100%;
+                            object-fit: contain;
+                            object-position: center;
+                        }
+
+                        h5 {
+                            font-weight: 500;
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 10px 1px $secondary-color;
+                            @include transition(0.15s);
+                        }
+                    }
+                }
+
+                &:hover {
+                    .nav-provider {
+                        display: block;
                     }
                 }
             }

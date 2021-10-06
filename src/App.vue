@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <Header></Header>
-    <Navbar></Navbar>
     <v-main>
       <router-view/>
     </v-main>
@@ -10,14 +9,12 @@
 
 <script>
 import Header from '@/layout/Header'
-import Navbar from '@/layout/Navbar'
 
 export default {
   name: 'App',
 
   components: {
     Header,
-    Navbar
   },
 
   data: () => ({
