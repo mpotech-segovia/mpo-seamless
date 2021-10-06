@@ -45,7 +45,6 @@
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             box-shadow: $box-shadow;
 
-
             a {
                 color: $c-white;
                 text-decoration: none;
@@ -123,6 +122,10 @@
                 align-items: center;
                 flex-wrap: wrap;
 
+                h2 {
+                    color: $primary-text;
+                }
+
                 .list-search {
                     margin-left: auto;
                     width: 250px;
@@ -151,7 +154,7 @@
 
                     a {
                         text-decoration: none;
-                        color: $c-white;
+                        color: $primary-text;
                     }
                     
                     .game-img {

@@ -52,10 +52,11 @@
                     .nav-title {
                         font-size: 12px;
                         font-weight: 500;
+                        color: $navbar-text;
                     }
 
                     &:hover {
-                        box-shadow: 0 0 10px 1px $secondary-color;
+                        box-shadow: 0px 0px 8px 1px $secondary-color;
 
                         .icon {
                             &.inactive {
