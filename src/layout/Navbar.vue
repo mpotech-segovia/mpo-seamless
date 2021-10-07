@@ -2,7 +2,7 @@
     <div class="navbar">
         <v-container class="py-0">
             <div class="navbar__cont">
-                <div class="navbar-logo">SEAMLESS</div>
+                <div class="navbar-logo"><a href="">SEAMLESS</a></div>
                 <div class="navbar-menu">
                     <div class="nav-item" v-for="(item, i) in navItem" :key="i">
                         <a :href="item.link" class="nav-link" >
