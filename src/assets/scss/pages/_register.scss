@@ -1,0 +1,16 @@
+@use "../utils/_index.scss" as *;
+@import "../components/_index.scss";
+
+.register {
+    &__header {
+        text-align: center;
+        h1 {
+            @include page-header(600, $background-text, 35px);
+        }
+    }
+    &__form {
+        @include page-form(35px 30px);
+        max-width: 1200px;
+        margin: auto;
+    }
+}

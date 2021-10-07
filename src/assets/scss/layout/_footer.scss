@@ -3,7 +3,7 @@
 .footer {
     background: $footer-color;
     color: $footer-text;
-    min-height: 500px;
+    padding-top: 15px;
 
     &__provider {
         .provider-content {

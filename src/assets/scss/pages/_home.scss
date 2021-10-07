@@ -231,9 +231,7 @@
 
                     .meter-item {
                         .meter-content {
-                            display: flex;
-                            align-items: center;
-                            flex-wrap: wrap;
+                            @include flex-item(flex-start);
                             margin-bottom: 10px;
 
                             .meter-time {

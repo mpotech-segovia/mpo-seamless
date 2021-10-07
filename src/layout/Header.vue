@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="form-button">
                                     <v-btn class="login mr-2" rounded small>Masuk</v-btn>
-                                    <v-btn class="register" rounded small>Daftar</v-btn>
+                                    <v-btn class="register" rounded small to="/register">Daftar</v-btn>
                                 </div>
                             </div>
                         </v-col>
