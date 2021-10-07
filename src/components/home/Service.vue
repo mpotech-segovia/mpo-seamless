@@ -140,7 +140,7 @@
 				paymentSwiperOption: {
                     slidesPerView: 3,
                     slidesPerColumn: 3,
-                    spaceBetween: 15,
+                    spaceBetween: 10,
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -148,11 +148,11 @@
                     breakpoints: {
                         1920: {
                             slidesPerView: 3,
-                            spaceBetween: 15,
+                            spaceBetween: 10,
                         },
                         320: {
                             slidesPerView: 2,
-                            spaceBetween: 15,
+                            spaceBetween: 10,
                         },
                     }
                 }

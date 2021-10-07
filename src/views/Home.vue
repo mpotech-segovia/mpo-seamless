@@ -3,6 +3,7 @@
     <SliderSection></SliderSection>
     <GamesSection></GamesSection>
     <ServiceSection></ServiceSection>
+    <SeoSection></SeoSection>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import SliderSection from '@/components/home/Slider'
 import GamesSection from '@/components/home/Games'
 import ServiceSection from '@/components/home/Service'
+import SeoSection from '@/components/home/Seo'
 
 export default {
   name: 'Home',
@@ -17,7 +19,8 @@ export default {
   components: {
     SliderSection,
     GamesSection,
-    ServiceSection
+    ServiceSection,
+    SeoSection
   },
 }
 </script>
