@@ -14,3 +14,13 @@ $btn-sizes: (
 
 /* Progress Linear */
 $progress-linear-border-radius: 25px;
+
+/* Chip */
+$icon-sizes: (
+    (
+        'small': (
+            'font-size': 11,
+            'height': 18,
+        ),
+    )
+);  
