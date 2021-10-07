@@ -1,6 +1,7 @@
 @use "../utils/_index.scss" as *;
 @import "./_header.scss";
 @import "./_navbar.scss";
+@import "./_footer.scss";
 
 .v-main {
     background: $background;
