@@ -5,6 +5,10 @@
     position: relative;
     box-shadow: $box-shadow;
 
+    @media screen and (max-width: 425px) {
+        display: none;
+    }
+
     &__cont {
         display: flex;
         align-items: center;

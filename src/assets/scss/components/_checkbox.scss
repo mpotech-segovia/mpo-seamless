@@ -1,0 +1,14 @@
+@use "../utils/_index.scss" as *;
+
+.v-input--checkbox {
+    .v-icon {
+        color: $c-white;
+        &.primary--text {
+            color: $secondary-color !important;
+        }
+    }
+    label {
+        color: $c-white !important;
+        font-size: 12px;
+    }
+}
