@@ -28,3 +28,7 @@
 	flex-wrap: wrap;
 	justify-content: $justify-content;
 }
+
+@mixin page-padding() {
+	padding: 25px 0;
+}

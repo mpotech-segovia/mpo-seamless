@@ -1,0 +1,20 @@
+@use "../utils/_index.scss" as *;
+
+.v-pagination {
+    .v-pagination__item {
+        background: $c-white !important;
+        color: $c-black !important;
+    }
+    .v-pagination__item--active {
+        &.primary {
+            background-color: $secondary-color !important;
+            color: $secondary-text !important;
+        }
+    }
+    .v-pagination__navigation {
+        background: $c-white !important;
+        .v-icon {
+            color: $c-black;
+        }
+    }
+}

@@ -44,14 +44,20 @@
                     </div>
                 </div>
                 <div class="list-grid">
-                    <div class="game-holder" v-for="(item, i) in filteredGame" :key="i">
-                        <a :href="item.link">
-                            <div class="game-img">
-                                <img :src="item.imgSrc" alt="">
-                            </div>
-                            <h5 class="game-title">{{ item.gameTitle }}</h5>
-                        </a>
-                    </div>
+                    <span v-for="(item, i) in filteredGame" :key="i">
+                        <div class="game-holder">
+                            <a :href="item.link">
+                                <div class="game-img">
+                                    <img :src="item.imgSrc" alt="">
+                                </div>
+                                <h5 class="game-title">{{ item.gameTitle }}</h5>
+                            </a>
+                        </div>
+                    </span>
+                    
+                </div>
+                <div class="list-pagination">
+                    <v-pagination v-model="page" :length="3" :total-visible="3" prev-icon="fas fa-caret-left" next-icon="fas fa-caret-right"></v-pagination>
                 </div>
             </div>
         </v-container>
@@ -64,6 +70,7 @@
 
         data() {
             return {
+                page: 1,
                 provider: ['Pragmatic Play', 'ISOFTBET', 'YGGDRASIL', 'Spadegaming', 'PLAYnGO', 'CQ9'],
                 searchGame: '',
                 gameList: [{

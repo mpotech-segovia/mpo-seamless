@@ -69,7 +69,7 @@ export default {
                 iconSrcActive: require('@/assets/img/navbar-icon/slots.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/slots-white.svg'),
                 navtitle: 'Slots',
-                link: '',
+                link: '#/game',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/pragmaticplay.png'),
                     providerName: 'Pragmatic Play',

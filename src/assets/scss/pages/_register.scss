@@ -2,6 +2,7 @@
 @import "../components/_index.scss";
 
 .register {
+    @include page-padding();
     &__header {
         text-align: center;
         h1 {

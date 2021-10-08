@@ -1,0 +1,12 @@
+@use "../utils/_index.scss" as *;
+@import "../components/_index.scss";
+
+.game {
+    @include page-padding();
+    &__header {
+        text-align: center;
+        h1 {
+            @include page-header(600, $background-text, 35px);
+        }
+    }
+}
