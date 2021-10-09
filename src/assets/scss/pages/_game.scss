@@ -27,7 +27,7 @@
             @include transition(0.15s);
 
             img {
-                @include image-fit(85px, 30px);
+                @include image-fit(85px, 30px, contain);
             }
 
             &:hover {
@@ -161,7 +161,7 @@
                 .game-img {
                     padding: 17px 7px 3px;
                     img {
-                        @include image-fit(100%, 150px);
+                        @include image-fit(100%, 150px, contain);
                         @include transition(0.15s);
                     }
                 }

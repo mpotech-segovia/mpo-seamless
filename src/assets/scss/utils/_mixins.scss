@@ -29,10 +29,10 @@
 	justify-content: $justify-content;
 }
 
-@mixin image-fit($width, $height) {
+@mixin image-fit($width, $height, $object-fit) {
 	width: $width;
 	height: $height;
-	object-fit: contain;
+	object-fit: $object-fit;
 	object-position: center;
 } 
 

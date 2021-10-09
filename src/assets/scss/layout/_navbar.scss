@@ -10,8 +10,7 @@
     }
 
     &__cont {
-        display: flex;
-        align-items: center;
+        @include flex-item(flex-start);
         
         .navbar-logo {
             color: $secondary-color;
@@ -99,7 +98,7 @@
                         }
 
                         img {
-                            @include image-fit(100%, 80px);
+                            @include image-fit(100%, 80px, contain);
                         }
 
                         h5 {

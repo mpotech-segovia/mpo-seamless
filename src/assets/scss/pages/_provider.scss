@@ -1,0 +1,77 @@
+@use "../utils/_index.scss" as *;
+@import "../components/_index.scss";
+
+.provider {
+    @include page-padding(); 
+
+    &__header {
+        text-align: center;
+        h1 {
+            @include page-header(600, $background-text, 35px);
+        }
+    }
+
+    &__list {
+        a {
+            text-decoration: none;
+        }
+        
+        .prov-holder {
+            @include page-form(0);
+            overflow: hidden;
+
+            .prov-img {
+                display: flex;
+                position: relative;
+
+                img {
+                    @include image-fit(100%, 200px, cover);
+                    @include transition(0.2s);
+                }
+
+                .play-now {
+                    font-size: 15px;
+                    padding: 13px 5px;
+                    text-align: center;
+                    color: $secondary-text;
+                    background: rgba($secondary-color, 0.5);
+                    box-shadow: $box-shadow;
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    transform: translateY(0%);
+                    opacity: 0;
+                    @include transition(0.2s);
+                }
+            }
+
+            .prov-name {
+                text-align: center;
+                font-weight: 500;
+                padding: 12px 13px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+            }
+
+            &:hover {
+                .prov-name {
+                    color: $secondary-color;
+                }
+                
+                img {
+                    filter: blur(2px) grayscale(100%);
+                    @include transition(0.2s);
+                }
+
+                .play-now {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 1;
+                    @include transition(0.2s);
+                }
+            }
+        }
+    }
+}

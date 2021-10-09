@@ -69,117 +69,117 @@ export default {
                 iconSrcActive: require('@/assets/img/navbar-icon/slots.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/slots-white.svg'),
                 navtitle: 'Slots',
-                link: '#/game',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/pragmaticplay.png'),
                     providerName: 'Pragmatic Play',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/spade_logo.png'),
                     providerName: 'Spade Gaming',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/joker.png'),
                     providerName: 'Joker Gaming',
-                    link: '',
+                    link: '#/game',
                 },]
             },
             {
                 iconSrcActive: require('@/assets/img/navbar-icon/sportsbook.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/sportsbook-white.svg'),
                 navtitle: 'Sportsbook',
-                link: '',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/afb.png'),
                     providerName: 'AFB',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/sbosport_logo.png'),
                     providerName: 'SBO Sport',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/cmd368.png'),
                     providerName: 'CMD368',
-                    link: '',
+                    link: '#/game',
                 },]
             },
             {
                 iconSrcActive: require('@/assets/img/navbar-icon/fishing.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/fishing-white.svg'),
                 navtitle: 'Fishing',
-                link: '',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/joker.png'),
                     providerName: 'Joker Gaming',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/spade_logo.png'),
                     providerName: 'Spade Gaming',
-                    link: '',
+                    link: '#/game',
                 },]
             },
             {
                 iconSrcActive: require('@/assets/img/navbar-icon/game-lain.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/game-lain-white.svg'),
                 navtitle: 'Game Lain',
-                link: '',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/sv388.webp'),
                     providerName: 'SV388 Cockfight',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/miki.webp'),
                     providerName: 'MIKI Gaming',
-                    link: '',
+                    link: '#/game',
                 },]
             },
             {
                 iconSrcActive: require('@/assets/img/navbar-icon/casino.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/casino-white.svg'),
                 navtitle: 'Casino',
-                link: '',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/gd88.webp'),
                     providerName: 'GD88',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/wm_casino.webp'),
                     providerName: 'WM Casino',
-                    link: '',
+                    link: '#/game',
                 },
                 {
                     imgSrc: require('@/assets/img/provider-img/pragmatic_play.webp'),
                     providerName: 'Pragmatic Play LC',
-                    link: '',
+                    link: '#/game',
                 },]
             },
             {
                 iconSrcActive: require('@/assets/img/navbar-icon/lottery.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/lottery-white.svg'),
                 navtitle: 'Lottery',
-                link: '',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/mpo4d.webp'),
                     providerName: 'MPO4D',
-                    link: '',
+                    link: '#/game',
                 },]
             },
             {
                 iconSrcActive: require('@/assets/img/navbar-icon/poker.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/poker-white.svg'),
                 navtitle: 'Poker',
-                link: '',
+                link: '#/provider',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/we1poker.webp'),
                     providerName: 'WE1Poker',
-                    link: '',
+                    link: '#/game',
                 },]
             },]
         }
