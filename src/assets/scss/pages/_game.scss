@@ -3,10 +3,198 @@
 
 .game {
     @include page-padding();
+
     &__header {
         text-align: center;
         h1 {
             @include page-header(600, $background-text, 35px);
+        }
+    }
+    
+    &__provider {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 15px;
+
+        .provider-item {
+            background: $primary-color;
+            box-shadow: $box-shadow;
+            border-radius: $border-radius;
+            border: 1px solid transparent;
+            text-align: center;
+            padding: 15px 20px;
+            @include flex-item(center);
+            @include transition(0.15s);
+
+            img {
+                @include image-fit(85px, 30px);
+            }
+
+            &:hover {
+                border: 1px solid rgba(255,255,255,0.15);
+                background: #2849A0;
+                @include transition(0.15s);
+
+                img {
+                    filter: grayscale(100%);
+                    @include transition(0.15s);
+                }
+            }
+
+            &.see-more {
+                max-width: 100px;
+                cursor: pointer;
+                .v-icon {
+                    color: $secondary-color;
+                    font-size: 25px;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        margin-top: 30px;
+        @include page-form(20px 25px 30px);
+
+        .list-header {
+            @include flex-item(flex-start);
+
+            h2 {
+                @include page-header(500, $page-text, 0)
+            }
+
+            .header-search {
+                margin-left: auto;
+                width: 200px;
+
+                .v-text-field {
+                    .v-input__slot {
+                        border-radius: $border-radius;
+                    }
+                }
+            }
+
+            .header-filter {
+                margin-left: 15px;
+                width: 200px;
+
+                .v-text-field {
+                    .v-input__slot {
+                        border-radius: $border-radius;
+                    }
+                }
+            }
+        }
+
+        .filter-category {
+            background: $secondary-color;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+            @include flex-item(center);
+            flex-wrap: initial;
+            white-space: nowrap;
+            margin: 25px 0;
+            overflow: hidden;
+            
+
+            .filter-item {
+                font-size: 14px;
+                padding: 15px 0;
+                margin: 0 20px;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: $secondary-text;
+                    font-weight: 500;
+                    @include transition(0.15s);
+                }
+
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: #ffe600;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transform: scale(0);
+                    @include transition(0.15s);
+                }
+
+                &:hover {
+                    a {
+                        color: #ffe600;
+                        @include transition(0.15s);
+                    }
+
+                    &:after {
+                        transform: scale(1);
+                        @include transition(0.15s);
+                    }
+                }
+            }
+        }
+
+        .list-grid {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            margin-top: 25px;
+
+            .game-holder {
+                text-align: center;
+                background: rgba(0,0,0,0.3);
+                border-radius: $border-radius;
+                border: 1px solid rgba(255,255,255,0.15);
+                @include transition(0.15s);
+
+                a {
+                    text-decoration: none;
+                    color: $primary-text;
+                }
+                
+                .game-img {
+                    padding: 17px 7px 3px;
+                    img {
+                        @include image-fit(100%, 150px);
+                        @include transition(0.15s);
+                    }
+                }
+
+                .game-title {
+                    padding: 0 20px 12px;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include transition(0.15s);
+                }
+
+                &:hover {
+                    @include transition(0.15s);
+                    border: 1px solid rgba(255,255,255,0.25);
+                    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+
+                    img {
+                        filter: grayscale(100%);
+                        @include transition(0.15s);
+                    }
+
+                    .game-title {
+                        color: $secondary-color;
+                        @include transition(0.15s);
+                    }
+                }
+            }
+        }
+
+        .list-pagination {
+            margin-top: 25px;
         }
     }
 }

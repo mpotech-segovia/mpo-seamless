@@ -29,6 +29,13 @@
 	justify-content: $justify-content;
 }
 
+@mixin image-fit($width, $height) {
+	width: $width;
+	height: $height;
+	object-fit: contain;
+	object-position: center;
+} 
+
 @mixin page-padding() {
 	padding: 25px 0;
 }

@@ -99,10 +99,7 @@
                         }
 
                         img {
-                            height: 80px;
-                            width: 100%;
-                            object-fit: contain;
-                            object-position: center;
+                            @include image-fit(100%, 80px);
                         }
 
                         h5 {

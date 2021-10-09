@@ -27,11 +27,8 @@
                 padding: 8px 0 0;
                 display: inline-block;
                 img {
-                    width: 100px;
-                    height: 40px;
+                    @include image-fit(100px, 40px);
                     margin: 5px;
-                    object-fit: contain;
-                    object-position: center;
                 }
             }
         }

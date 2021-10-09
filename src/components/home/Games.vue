@@ -54,7 +54,6 @@
                             </a>
                         </div>
                     </span>
-                    
                 </div>
                 <div class="list-pagination">
                     <v-pagination v-model="page" :length="3" :total-visible="3" prev-icon="fas fa-caret-left" next-icon="fas fa-caret-right"></v-pagination>

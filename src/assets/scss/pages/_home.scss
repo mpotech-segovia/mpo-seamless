@@ -36,6 +36,7 @@
     }
     &__games {
         padding-top: 40px;
+        
         .game-type {
             background: $primary-color;
             border-radius: $border-radius;
@@ -111,6 +112,7 @@
                 }
             }
         }
+
         .game-list {
             margin: 30px 0 5px;
             padding: 20px 25px 30px;
@@ -131,12 +133,11 @@
 
                 .list-search {
                     margin-left: auto;
-                    width: 250px;
+                    min-width: 200px;
 
                     .v-text-field {
                         .v-input__slot {
                             border-radius: $border-radius;
-                            min-width: 150px;
                         }
                     }
                 }
@@ -163,10 +164,7 @@
                     .game-img {
                         padding: 17px 7px 3px;
                         img {
-                            width: 100%;
-                            height: 150px;
-                            object-fit: contain;
-                            object-position: center;
+                            @include image-fit(100%, 150px);
                             @include transition(0.15s);
                         }
                     }
@@ -316,9 +314,7 @@
                             }
 
                             img {
-                                width: 100%;
-                                height: 25px;
-                                object-fit: contain;
+                                @include image-fit(100%, 25px);
                             }
 
                             &:hover {
@@ -363,10 +359,7 @@
                         @include transition(0.15s);
 
                         img {
-                            width: 30px;
-                            height: 30px;
-                            object-fit: contain;
-                            object-position: center;
+                            @include image-fit(30px, 30px);
                         }
 
                         h4 {
