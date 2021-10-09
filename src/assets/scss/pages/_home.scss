@@ -36,7 +36,7 @@
     }
     &__games {
         padding-top: 40px;
-        
+
         .game-type {
             background: $primary-color;
             border-radius: $border-radius;
@@ -104,9 +104,6 @@
 
                 .v-select {
                     .v-input__control {
-                        border-radius: $border-radius;
-                    }
-                    .v-input__control {
                         min-height: 65px !important;
                     }
                 }
@@ -134,12 +131,6 @@
                 .list-search {
                     margin-left: auto;
                     min-width: 200px;
-
-                    .v-text-field {
-                        .v-input__slot {
-                            border-radius: $border-radius;
-                        }
-                    }
                 }
             }
 
