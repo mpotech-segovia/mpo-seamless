@@ -40,6 +40,11 @@ const routes = [
     name: 'Lottery',
     component: () => import('../views/Lottery.vue')
   },
+  {
+    path: '/transaction',
+    name: 'Transaction',
+    component: () => import('../views/Transaction.vue')
+  },
 ]
 
 const router = new VueRouter({

@@ -22,7 +22,7 @@
         }
 
         .header-form {
-            @include flex-item(flex-end);
+            @include flex-item(flex-end); 
 
             .form-group {
                 display: flex;
@@ -32,6 +32,8 @@
             .form-button {
                 .v-btn {
                     min-width: 80px;
+                    background: $secondary-gradient;
+                    color: $c-white;
                 }
                 .login {
                     background: $secondary-gradient;
@@ -41,6 +43,10 @@
                     background: $primary-gradient;
                     color: $c-white;
                 }
+                .logout {
+                    background: $tertiary-gradient;
+                    color: $c-white;
+                }
             }
         }
 
@@ -48,7 +54,7 @@
             font-size: 11px;
             font-style: italic;
             text-align: right;
-            margin-top: 5px;
+            margin-top: 2px;
 
             a {
                 text-decoration: none;

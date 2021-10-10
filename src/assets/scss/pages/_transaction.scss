@@ -1,0 +1,6 @@
+@use "../utils/_index.scss" as *;
+@import "../components/_index.scss";
+
+.transaction {
+    @include page-padding();
+}
