@@ -102,12 +102,12 @@
             
 
             .filter-item {
-                font-size: 14px;
                 padding: 15px 0;
                 margin: 0 20px;
                 position: relative;
 
                 a {
+                    font-size: 14px;
                     text-decoration: none;
                     color: $secondary-text;
                     font-weight: 500;
@@ -186,7 +186,7 @@
                     }
 
                     .game-title {
-                        color: $secondary-color;
+                        color: #ffe600;
                         @include transition(0.15s);
                     }
                 }

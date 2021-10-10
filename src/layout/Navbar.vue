@@ -41,7 +41,7 @@
                         </a>
                     </div>
                     <div class="nav-item">
-                        <a href="" class="nav-link" >
+                        <a href="#/promotions" class="nav-link" >
                             <div class="link-item">
                                 <div class="icon active">
                                     <img src="@/assets/img/navbar-icon/promosi.svg" alt="">
