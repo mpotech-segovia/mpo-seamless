@@ -169,9 +169,7 @@
                 .game-title {
                     padding: 0 20px 12px;
                     font-weight: 500;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    @include text-elipsis();
                     @include transition(0.15s);
                 }
 

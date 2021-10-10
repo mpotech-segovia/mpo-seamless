@@ -21,7 +21,7 @@
                 <v-row>
                     <v-col xl="4" lg="6" md="6" sm="6" cols="12" v-for="(item, i) in promoList" :key="i">
                         <a :href="item.link">
-                            <div class="promo-holder">
+                            <div class="promo-item">
                                 <div class="promo-img">
                                     <img :src="item.imgSrc" alt="">
                                     <div class="play-now"><h2>Show Promo</h2></div>

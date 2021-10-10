@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="nav-item">
-                        <a href="" class="nav-link" >
+                        <a href="#/news" class="nav-link" >
                             <div class="link-item">
                                 <div class="icon active">
                                     <img src="@/assets/img/navbar-icon/berita.svg" alt="">

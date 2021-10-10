@@ -29,7 +29,17 @@ const routes = [
     path: '/promotions',
     name: 'Promotions',
     component: () => import('../views/Promotions.vue')
-  }
+  },
+  {
+    path: '/news',
+    name: 'News',
+    component: () => import('../views/News.vue')
+  },
+  {
+    path: '/lottery',
+    name: 'Lottery',
+    component: () => import('../views/Lottery.vue')
+  },
 ]
 
 const router = new VueRouter({

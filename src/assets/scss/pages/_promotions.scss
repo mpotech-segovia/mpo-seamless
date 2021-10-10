@@ -73,7 +73,7 @@
             text-decoration: none;
         }
 
-        .promo-holder {
+        .promo-item {
             @include page-form(0);
             overflow: hidden;
 
@@ -106,13 +106,11 @@
                 text-align: center;
                 font-weight: 500;
                 padding: 12px 13px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                @include text-elipsis();
             }
 
             &:hover {
-                .promo-name {
+                .promo-title {
                     color: #ffe600;
                 }
                 

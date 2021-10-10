@@ -1,6 +1,6 @@
 @use "../utils/_index.scss" as *;
 
-.provider {
+.news {
     @include page-padding(); 
 
     &__header {
@@ -14,21 +14,21 @@
         a {
             text-decoration: none;
         }
-        
-        .prov-holder {
+
+        .news-item {
             @include page-form(0);
             overflow: hidden;
 
-            .prov-img {
+            .news-img {
                 display: flex;
                 position: relative;
 
                 img {
-                    @include image-fit(100%, 200px, cover);
+                    @include image-fit(100%, 250px, cover);
                     @include transition(0.2s);
                 }
 
-                .play-now {
+                .show-now {
                     font-size: 15px;
                     padding: 13px 5px;
                     text-align: center;
@@ -44,25 +44,42 @@
                 }
             }
 
-            .prov-name {
+            .news-info {
+                padding: 12px 13px 0;
+                white-space: nowrap;
+                
+
+                .news-title {
+                    font-weight: 500;
+                    @include text-elipsis();
+                }
+
+                p {
+                    font-size: 14px;
+                    @include text-elipsis();
+                }
+            }
+
+            .news-button {
+                padding: 0 13px 18px;
                 text-align: center;
-                font-weight: 500;
-                padding: 12px 13px;
-                text-transform: uppercase;
-                @include text-elipsis();
+
+                .v-btn {
+                    background: $secondary-gradient;
+                    color: $c-white;
+                }
             }
 
             &:hover {
-                .prov-name {
-                    color: #ffe600;
-                }
-                
+                color: #ffe600;
+                @include transition(0.15s);
+
                 img {
                     filter: blur(2px) grayscale(100%);
                     @include transition(0.2s);
                 }
 
-                .play-now {
+                .show-now {
                     top: 50%;
                     transform: translateY(-50%);
                     opacity: 1;

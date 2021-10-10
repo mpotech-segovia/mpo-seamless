@@ -1,0 +1,59 @@
+@use "../utils/_index.scss" as *;
+
+.lottery {
+    @include page-padding(); 
+
+    &__header {
+        text-align: center;
+        h1 {
+            @include page-header(600, $background-text, 35px);
+        }
+    }
+
+    &__list {
+        a {
+            text-decoration: none
+        }
+
+        .lottery-item {
+            @include page-form(20px 15px 5px);
+            max-width: 200px;
+            margin: auto;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            @include transition(0.15s);
+
+            .lottery-flag {
+                img {
+                    @include image-fit(70px, 50px, contain)
+                }
+            }
+
+            .lottery-content {
+                .country {
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+
+                .date {
+                    font-weight: 400;
+                }
+
+                .result {
+                    font-size: 40px;
+                    @include transition(0.15s);
+                }
+            }
+
+            &:hover {
+                border: 1px solid rgba(255,255,255,0.3);
+                @include transition(0.15s);
+
+                .result {
+                    color: #ffe600;
+                    @include transition(0.15s);
+                }
+            }
+        }
+    }
+}
