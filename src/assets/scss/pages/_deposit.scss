@@ -73,7 +73,7 @@
 
             .swiper-item {
                 @include page-form(15px 10px);
-                max-width: 370px;
+                max-width: 340px;
                 margin-bottom: 20px;
                 max-height: 80px;
                 position: relative;
@@ -113,6 +113,45 @@
                     .minimum {
                         font-weight: 500;
                     }
+                }
+            }
+        }
+
+        .deposit-info {
+            @include page-form(0);
+            overflow: hidden;
+
+            .info-header {
+                @include flex-item(flex-start);
+                background: $secondary-color;
+                padding: 15px 25px;
+
+                .v-icon {
+                    color: $secondary-text;
+                    margin-right: 10px;
+                }
+
+                h3 {
+                    @include page-header(500, $secondary-text, 0);
+                }
+            }
+
+            .info-content {
+                padding: 20px 25px;
+            }
+        }
+
+        .deposit-history {
+            @include page-form(25px 25px);
+
+            .history-header {
+                @include flex-item(flex-start);
+                margin-bottom: 20px;
+                
+                .delete {
+                    background: $tertiary-gradient !important;
+                    color: $c-white;
+                    margin-left: auto;
                 }
             }
         }

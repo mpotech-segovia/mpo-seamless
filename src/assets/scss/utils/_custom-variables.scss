@@ -38,3 +38,15 @@ $tab-font-size: 23px;
 $tab-font-weight: 600;
 $tabs-item-padding: 30px 16px;
 $tabs-bar-height: 65px;
+
+/* Colors */
+$material-light: (
+    (
+        'table': (
+            'hover': rgba(255,255,255,0.1),
+        ),
+        'text': (
+            'primary': #ffffff,
+        ),
+    )
+);

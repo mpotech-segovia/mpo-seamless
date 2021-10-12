@@ -23,12 +23,10 @@
 
         &.v-tab--active {
             background: $secondary-color;
-            color: $secondary-text;
         }
 
         &:hover {
             background: $secondary-color;
-            color: $secondary-text;
             @include transition(0.2s);
         }
 
