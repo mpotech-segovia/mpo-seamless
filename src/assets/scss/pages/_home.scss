@@ -292,6 +292,7 @@
                                 top: -8px;
                                 left: 50%;
                                 transform: translateX(-50%);
+                                text-transform: uppercase;
 
                                 &.online {
                                     background: $primary-gradient;
@@ -315,14 +316,6 @@
 
                         .swiper-pagination {
                             bottom: 0;
-
-                            .swiper-pagination-bullet-active {
-                                background: $c-white;
-                            }
-                            
-                            .swiper-pagination-bullet {
-                                background: $c-white;
-                            }
                         }
                     }
                 }

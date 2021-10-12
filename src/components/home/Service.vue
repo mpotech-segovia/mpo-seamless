@@ -49,7 +49,7 @@
                             </div>
                             <swiper class="swiper payment-swiper" :options="paymentSwiperOption">
                                 <swiper-slide class="d-flex align-center justify-center" v-for="(item, i) in paymentList" :key="i">
-                                    <v-chip label small :class="item.status">Online</v-chip>
+                                    <v-chip label small :class="item.status">{{ item.status }}</v-chip>
                                     <img class="mt-2" :src="item.imgSrc" alt="">
                                 </swiper-slide>
                                 <div class="swiper-pagination" slot="pagination"></div>
