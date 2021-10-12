@@ -1,0 +1,23 @@
+@use "../utils/_index.scss" as *;
+
+.v-file-input {
+    .v-input__control {
+        border: 2px solid $secondary-color;
+
+        .v-input__slot {
+            padding: 0 24px 0 10px;
+
+            .v-text-field__slot {
+                margin-left: 10px;
+            }
+        }
+
+        .v-icon {
+            color: $c-white;
+            padding: 9px;
+            background: $secondary-color !important;
+            border-radius: 25px;
+            font-size: 15px;
+        }
+    }
+}

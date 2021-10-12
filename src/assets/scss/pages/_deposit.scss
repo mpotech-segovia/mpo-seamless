@@ -8,6 +8,47 @@
             .form-title {
                 @include page-header(600, $page-text, 15px)
             }
+
+            .form-deposit {
+                .form-group {
+                    margin-bottom: 20px;
+
+                    .label-textfield {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                    &.show-bank {
+                        .bank-item {
+                            @include flex-item(center);
+
+                            .bank-img {
+                                img {
+                                    @include image-fit(130px, 60px, contain);
+                                }
+                            }
+
+                            .bank-account {
+                                font-size: 13px;
+                                ul {
+                                    list-style: none;
+                                    li {
+                                        margin-bottom: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .deposit-conversion {
+                        @include flex-item(flex-start);
+
+                        .v-icon {
+                            color: $page-text;
+                        }
+                    }
+                }
+            }
         }
     }
 }
