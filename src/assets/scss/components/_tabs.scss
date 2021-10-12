@@ -1,0 +1,38 @@
+@use "../utils/_index.scss" as *;
+
+.v-tabs {
+    &-bar {
+        margin-bottom: 35px;
+    }
+
+    .theme--light {
+        background: transparent !important;
+    }
+
+    .v-tab {
+        background: $primary-color;
+        box-shadow: $box-shadow;
+        color: $primary-text !important;
+        border-radius: $border-radius;
+        @include transition(0.2s);
+
+        &::before {
+            display: none;
+        }
+
+        &.v-tab--active {
+            background: $secondary-color;
+            color: $secondary-text;
+        }
+
+        &:hover {
+            background: $secondary-color;
+            color: $secondary-text;
+            @include transition(0.2s);
+        }
+
+        .v-icon {
+            color: $primary-text !important;
+        }
+    }
+}

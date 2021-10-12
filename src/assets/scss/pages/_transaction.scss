@@ -3,4 +3,11 @@
 
 .transaction {
     @include page-padding();
+
+    &__deposit {
+        .deposit-form {
+            @include page-form(20px 25px);
+            color: red;
+        }
+    }
 }
