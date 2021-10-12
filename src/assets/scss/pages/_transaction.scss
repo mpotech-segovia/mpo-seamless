@@ -1,6 +1,6 @@
 @use "../utils/_index.scss" as *;
-@forward "../components/_index.scss";
-@forward "../pages/_deposit.scss";
+@use "../components/_index.scss";
+@use "../pages/_deposit.scss";
 
 .transaction {
     @include page-padding();
