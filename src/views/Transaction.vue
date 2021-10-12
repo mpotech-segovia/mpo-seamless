@@ -12,7 +12,7 @@
                     <Deposit></Deposit>
                 </v-tab-item>
                 <v-tab-item>
-                    <h1>THIS IS WITHDRAW</h1>
+                    <Withdraw></Withdraw>
                 </v-tab-item>
             </v-tabs>
         </v-container>
@@ -22,6 +22,7 @@
 
 <script>
     import Deposit from '@/components/transaction/Deposit.vue'
+    import Withdraw from '@/components/transaction/Withdraw.vue'
     import Seo from '@/components/home/Seo.vue'
 
     export default {
@@ -29,6 +30,7 @@
 
         components: {
             Deposit,
+            Withdraw,
             Seo,
         }
     }

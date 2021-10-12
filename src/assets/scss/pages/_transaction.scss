@@ -1,6 +1,6 @@
 @use "../utils/_index.scss" as *;
-@use "../components/_index.scss";
-@use "../pages/_deposit.scss";
+@import "../pages/_deposit.scss";
+@import "../pages/_withdraw.scss";
 
 .transaction {
     @include page-padding();
