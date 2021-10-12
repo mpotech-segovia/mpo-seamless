@@ -1,11 +1,11 @@
 @use "../utils/_index.scss" as *;
-@forward "../components/_index.scss";
+@use "../components/_index.scss";
 
 .transaction {
     &__withdraw {
         .withdraw-form {
             @include page-form(20px 25px);
-            color: blue;
+            color: red;
         }
     }
 }
