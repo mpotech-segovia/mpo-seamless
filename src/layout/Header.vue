@@ -20,7 +20,7 @@
                                     <v-text-field label="Password" type="password" solo rounded hide-details dense flat></v-text-field>
                                 </div>
                                 <div class="form-button">
-                                    <v-btn class="login mr-2" rounded small>Masuk</v-btn>
+                                    <v-btn class="login mr-2" rounded small @click="guest = !guest">Masuk</v-btn>
                                     <v-btn class="register" rounded small to="/register">Daftar</v-btn>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                     <v-btn class="profil mr-2" rounded small>Profil</v-btn>
                                     <v-btn class="transaksi mr-2" rounded small to="/transaction">Transaksi</v-btn>
                                     <v-btn class="bonus mr-2" rounded small>Bonus</v-btn>
-                                    <v-btn class="logout" rounded small>Logout</v-btn>
+                                    <v-btn class="logout" rounded small @click="guest = !guest">Logout</v-btn>
                                 </div>
                             </div>
                         </v-col>

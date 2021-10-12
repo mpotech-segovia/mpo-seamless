@@ -1,11 +1,13 @@
 @use "../utils/_index.scss" as *;
-@use "../components/_index.scss";
 
 .transaction {
     &__deposit {
         .deposit-form {
             @include page-form(20px 25px);
-            color: violet;
+            
+            .form-title {
+                @include page-header(600, $page-text, 15px)
+            }
         }
     }
 }
