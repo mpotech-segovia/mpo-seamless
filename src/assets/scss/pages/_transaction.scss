@@ -1,13 +1,7 @@
 @use "../utils/_index.scss" as *;
 @import "../components/_index.scss";
+@import "../pages/_deposit.scss";
 
 .transaction {
     @include page-padding();
-
-    &__deposit {
-        .deposit-form {
-            @include page-form(20px 25px);
-            color: red;
-        }
-    }
 }
