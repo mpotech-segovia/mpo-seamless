@@ -16,7 +16,3 @@ export default {
     name: 'Deposit'
 }
 </script>
-
-<style lang="scss" scoped>
-    @import '@/assets/scss/pages/_transaction.scss';
-</style>
