@@ -45,8 +45,9 @@ $material-light: (
         'table': (
             'hover': rgba(255,255,255,0.1),
         ),
-        'text': (
-            'primary': #ffffff,
-        ),
     )
 );
+
+/* Table */
+$data-table-regular-header-font-size: 14px;
+$data-table-regular-row-font-size: 12px;

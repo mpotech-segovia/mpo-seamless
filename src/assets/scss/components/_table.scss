@@ -1,0 +1,30 @@
+@use "../utils/_index.scss" as *;
+
+.v-data-table {
+    color: $c-white !important;
+
+    &__divider {
+        border: 1px solid rgba(255,255,255,0.3) !important;
+    }
+
+    &-header {
+        th {
+            border-top: 1px solid rgba(255,255,255,0.3) !important;
+        }
+    }
+
+    th {
+        color: $c-white !important;
+    }
+
+    .v-data-footer {
+        .v-icon {
+            color: $c-white;
+        }
+        .v-btn--disabled {
+            .v-icon {
+                color: rgba(255,255,255,0.26) !important;
+            }
+        }
+    }
+}
