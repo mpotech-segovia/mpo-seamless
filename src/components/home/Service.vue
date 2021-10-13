@@ -121,6 +121,38 @@
                 {
                     imgSrc: require('@/assets/img/payment/telkomsel.png'),
                     status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/bca.png'),
+                    status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/bni.png'),
+                    status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/mandiri.png'),
+                    status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/bri.png'),
+                    status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/dana.png'),
+                    status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/ovo.png'),
+                    status: 'offline',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/xl.png'),
+                    status: 'online',
+                },
+                {
+                    imgSrc: require('@/assets/img/payment/telkomsel.png'),
+                    status: 'online',
                 },],
                 helpSupport: [{
                     imgSrc: require('@/assets/img/service-icon/contact.svg'),

@@ -45,6 +45,11 @@ const routes = [
     name: 'Transaction',
     component: () => import('../views/Transaction.vue')
   },
+  {
+    path: '/bonus',
+    name: 'Bonus',
+    component: () => import('../views/Bonus.vue')
+  },
 ]
 
 const router = new VueRouter({

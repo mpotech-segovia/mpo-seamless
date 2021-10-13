@@ -1,0 +1,91 @@
+@use "../utils/_index.scss" as *;
+
+.bonus {
+    &__claim {
+        @include page-form(20px 25px 25px);
+
+        .claim-info {
+            background: rgba(0,0,0,0.2);
+            padding: 20px 25px;
+            border-radius: $border-radius;
+            margin-bottom: 30px;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        .claim-list {
+            .claim-item {
+                background: rgba(0,0,0,0.2);
+                border-radius: $border-radius;
+                padding: 15px 30px 20px;
+                text-align: center;
+                    
+                h3 {
+                    font-weight: 500;
+                    margin-bottom: 15px;
+                }
+
+                .claim-content {
+                    min-height: 190px;
+                    .claim-swiper {
+                        height: 150px;
+                        margin-left: auto;
+                        margin-right: auto;
+                
+                        .swiper-slide {
+                            height: 40px;
+                            background: $primary-color;
+                            color: $primary-text;
+                            border: 1px solid rgba(255,255,255,0.20);
+                            border-radius: $border-radius;
+                            text-align: center;
+                            padding: 7px 5px;
+                            position: relative;
+                            width: auto !important;
+                            box-shadow: $box-shadow;
+    
+                            img {
+                                @include image-fit(70px, 35px, contain);
+                                @include transition(0.15s);
+                            }
+    
+                            &:hover {
+                                img {
+                                    filter: grayscale(100%);
+                                    @include transition(0.15s);
+                                }
+                            }
+                        }
+    
+                        .swiper-pagination {
+                            bottom: 0;
+                        }
+                    }
+
+                    .claim-button {
+                        .v-btn {
+                            min-width: 100px;
+                            margin: 0 10px;
+                        }
+
+                        .information {
+                            border: 2px solid $c-white;
+                            color: $c-white;
+                        }
+
+                        .claim {
+                            background: $primary-gradient !important;
+                            color: $c-white;
+                        }
+                    }
+                }
+
+                .claim-progress {
+                    min-height: 190px;
+                }
+            }
+        }
+    }
+}

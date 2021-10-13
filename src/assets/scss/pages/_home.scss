@@ -282,7 +282,7 @@
                             padding: 8px 0;
                             position: relative;
                             margin-bottom: 10px;
-                            width: 165px !important;
+                            width: auto !important;
                             @include transition(0.15s);
 
                             .v-chip {

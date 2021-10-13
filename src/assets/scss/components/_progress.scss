@@ -1,0 +1,11 @@
+@use "../utils/_index.scss" as *;
+
+.v-progress-circular {
+    .v-progress-circular__overlay {
+        color: $secondary-color !important;
+    }
+
+    .v-progress-circular__info {
+        font-size: 45px;
+    }
+}

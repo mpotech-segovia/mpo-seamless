@@ -29,7 +29,7 @@
                                     <v-btn class="memo mr-2" rounded small>Memo</v-btn>
                                     <v-btn class="profil mr-2" rounded small>Profil</v-btn>
                                     <v-btn class="transaksi mr-2" rounded small to="/transaction">Transaksi</v-btn>
-                                    <v-btn class="bonus mr-2" rounded small>Bonus</v-btn>
+                                    <v-btn class="bonus mr-2" rounded small to="/bonus">Bonus</v-btn>
                                     <v-btn class="logout" rounded small @click="guest = !guest">Logout</v-btn>
                                 </div>
                             </div>
