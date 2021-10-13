@@ -4,8 +4,100 @@
 .transaction {
     &__withdraw {
         .withdraw-form {
-            @include page-form(20px 25px);
-            color: yellow;
+            @include page-form(20px 25px 25px);
+            
+            .form-title {
+                @include page-header(600, $page-text, 15px)
+            }
+    
+            .form-withdraw {
+                .form-group {
+                    margin-bottom: 20px;
+    
+                    .label-textfield {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+    
+                    &.show-bank {
+                        .bank-item {
+                            @include flex-item(center);
+    
+                            .bank-img {
+                                img {
+                                    @include image-fit(130px, 60px, contain);
+                                }
+                            }
+    
+                            .bank-account {
+                                font-size: 13px;
+                                ul {
+                                    list-style: none;
+                                    li {
+                                        margin-bottom: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    .withdraw-conversion {
+                        @include flex-item(flex-start);
+    
+                        .v-icon {
+                            color: $page-text;
+                        }
+                    }
+                }
+    
+                .withdraw-button {
+                    max-width: 350px;
+                    margin: 30px auto 0;
+                    .v-btn {
+                        background: $primary-gradient !important;
+                        color: $c-white;
+                    }
+                }
+            }
+        }
+    
+        .withdraw-info {
+            @include page-form(0);
+            overflow: hidden;
+    
+            .info-header {
+                @include flex-item(flex-start);
+                background: $secondary-color;
+                padding: 15px 25px;
+    
+                .v-icon {
+                    color: $secondary-text;
+                    margin-right: 10px;
+                }
+    
+                h3 {
+                    @include page-header(500, $secondary-text, 0);
+                }
+            }
+    
+            .info-content {
+                padding: 20px 25px;
+            }
+        }
+    
+        .withdraw-history {
+            @include page-form(25px 25px);
+    
+            .history-header {
+                @include flex-item(flex-start);
+                margin-bottom: 20px;
+                
+                .delete {
+                    background: $tertiary-gradient !important;
+                    color: $c-white;
+                    margin-left: auto;
+                }
+            }
         }
     }
 }

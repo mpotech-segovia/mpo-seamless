@@ -60,63 +60,6 @@
             }
         }
 
-        .bank-swiper {
-            overflow: hidden;
-            height: 610px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 10px;
-
-            .swiper-slide {
-                height: auto;
-            }
-
-            .swiper-item {
-                @include page-form(15px 10px);
-                max-width: 340px;
-                margin-bottom: 20px;
-                max-height: 80px;
-                position: relative;
-
-                .v-chip {
-                    color: $c-white;
-                    font-weight: 500;
-                    position: absolute;
-                    top: -8px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    text-transform: uppercase;
-
-                    &.online {
-                        background: $primary-gradient !important;
-                    }
-                    &.offline {
-                        background: $tertiary-gradient !important;
-                    }
-                }
-
-                .bank-info {
-                    @include flex-item(flex-start);
-                    height: 100%;
-
-                    .bank-img {
-                        padding: 10px 15px;
-                        border: 1px solid rgba(255,255,255,0.2);
-                        box-shadow: $box-shadow;
-                        margin: 0 15px 0 20px;
-                        @include flex-item(center);
-                        img {
-                            @include image-fit(90px, 35px, contain);
-                        }
-                    }
-
-                    .minimum {
-                        font-weight: 500;
-                    }
-                }
-            }
-        }
-
         .deposit-info {
             @include page-form(0);
             overflow: hidden;

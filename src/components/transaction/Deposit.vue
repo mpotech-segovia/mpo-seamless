@@ -15,7 +15,7 @@
                                     </v-select>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1">
-                                    <div class="label-textfield font-weight-medium" for="">Nama Pemilik rekening</div>
+                                    <div class="label-textfield font-weight-medium" for="">JACK THE RIPPER</div>
                                     <div class="label-textfield" for="">2891 7431 02</div>
                                 </v-col>
                             </v-row>
@@ -123,23 +123,7 @@
                 </div>
             </v-col>
             <v-col xl="3" lg="4" md="4" sm="12" cols="12">
-                <swiper class="swiper bank-swiper" :options="bankSwiper">
-                    <swiper-slide>
-                        <div class="swiper-item" v-for="(item, i) in bankList" :key="i">
-                            <v-chip label small class="status" :class="item.status">{{ item.status }}</v-chip>
-                            <div class="bank-info">
-                                <div class="bank-img">
-                                    <img :src="item.imgSrc" alt="">
-                                </div>
-                                <div class="bank-content">
-                                    <h3 class="name">{{ item.bankName }}</h3>
-                                    <h6 class="minimum">{{ item.minimum }}</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper>
+                <BankTransaction></BankTransaction>
             </v-col>
         </v-row>
         <div class="deposit-info mt-12">
@@ -178,18 +162,13 @@
 </template>
 
 <script>
-    import {
-        Swiper,
-        SwiperSlide
-    } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.min.css'
+    import BankTransaction from '@/components/transaction/BankTransaction.vue'
 
     export default {
         name: 'Deposit',
 
         components: {
-            Swiper,
-            SwiperSlide,
+            BankTransaction,
         },
 
         data() {
@@ -197,64 +176,6 @@
                 bank: ['BCA', 'BRI', 'BNI', 'Mandiri', 'Bank Lain', ],
                 wallet: ['Dompet Utama', 'Dompet Porker'],
                 proofPayment: [],
-                bankList: [{
-                        imgSrc: require('@/assets/img/payment/bca.png'),
-                        bankName: 'BCA',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/bni.png'),
-                        bankName: 'BNI',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/mandiri.png'),
-                        bankName: 'MANDIRI',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/bri.png'),
-                        bankName: 'BRI',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/dana.png'),
-                        bankName: 'DANA',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/ovo.png'),
-                        bankName: 'OVO PAY',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'offline',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/xl.png'),
-                        bankName: 'XL',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                    {
-                        imgSrc: require('@/assets/img/payment/telkomsel.png'),
-                        bankName: 'TELKOMSEL',
-                        minimum: 'Deposit Min = 20, Max = 9999',
-                        status: 'online',
-                    },
-                ],
-                bankSwiper: {
-                    direction: 'vertical',
-                    slidesPerView: 'auto',
-                    mousewheel: 'true',
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                },
                 headers: [{
                     text: 'Nomor',
                     align: 'start',
@@ -297,19 +218,19 @@
                 },
                 {
                     number: '1',
-                    date: 'October 13, 2021',
+                    date: 'October 16, 2021',
                     amount: '999.99',
                     status: 'Approved',
                 },
                 {
                     number: '2',
-                    date: 'October 14, 2021',
+                    date: 'October 17, 2021',
                     amount: '999.99',
                     status: 'Pending',
                 },
                 {
                     number: '3',
-                    date: 'October 15, 2021',
+                    date: 'October 18, 2021',
                     amount: '999.99',
                     status: 'Rejected',
                 },],
