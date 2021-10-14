@@ -119,7 +119,7 @@ export default {
             },
             {
                 linkName: 'FAQ',
-                link: ''
+                link: '#/help'
             },
             {
                 linkName: 'Feedback',

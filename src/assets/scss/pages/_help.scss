@@ -1,0 +1,73 @@
+@use "../utils/_index.scss" as *;
+
+.help {
+    @include page-padding();
+
+    &__header {
+        text-align: center;
+        padding: 40px 10px 45px;
+        background: #142653;
+        h1 {
+            @include page-header(600, $background-text, 35px);
+            margin-bottom: 10px;
+        }
+        h3 {
+            @include page-header(600, $background-text, 25px);
+            margin-bottom: 0;
+        }
+    }
+
+    &__container {
+        max-width: 1200px;
+        margin: 35px auto;
+
+        .v-tabs {
+            .tab-holder {
+                @include page-form(0 10px);
+                min-width: 250px;
+                margin-right: 40px;
+
+                .v-tab {
+                    font-size: 15px;
+                    justify-content: flex-start;
+                    padding: 22px 15px;
+                    height: 30px;
+                    font-weight: 500;
+                    border: 1px solid rgba(255,255,255,0.2);
+
+                    &--active {
+                        background: rgba(255,255,255,0.1);
+                    }
+
+                    &:hover {
+                        background: rgba(255,255,255,0.1);
+                    }
+                }
+            }
+
+            .help-accordion {
+                .v-expansion-panels {
+                    box-shadow: $box-shadow;
+                    border-radius: $border-radius;
+                }
+                .v-expansion-panel {
+                    background: $primary-color;
+                    color: $primary-text;
+                    
+
+                    &-header {
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    &-content {
+                        padding-top: 15px;
+                        font-size: 13px;
+                        font-weight: 300;
+                        background: #304375;
+                    }
+                }
+            }
+        }
+    }
+}

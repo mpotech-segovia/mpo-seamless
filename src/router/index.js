@@ -50,6 +50,11 @@ const routes = [
     name: 'Bonus',
     component: () => import('../views/Bonus.vue')
   },
+  {
+    path: '/help',
+    name: 'Help',
+    component: () => import('../views/Help.vue')
+  },
 ]
 
 const router = new VueRouter({

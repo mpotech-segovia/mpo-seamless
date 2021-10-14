@@ -24,8 +24,8 @@
                                 <v-btn class="claim" rounded @click="claimDailyBonus = !claimDailyBonus">Claim</v-btn>
                             </div>
                         </div>
-                        <div class="claim-progress" v-else>
-                            <v-progress-circular :rotate="-90" :size="190" :width="15" value="83">83%</v-progress-circular>
+                        <div class="claim-progress d-flex justify-center align-center" v-else>
+                            <v-progress-circular :rotate="-90" :size="170" :width="15" value="83">83%</v-progress-circular>
                         </div>
                     </div>
                 </v-col>
