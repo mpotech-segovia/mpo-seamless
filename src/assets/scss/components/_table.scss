@@ -1,7 +1,8 @@
 @use "../utils/_index.scss" as *;
 
 .v-data-table {
-    color: $c-white !important;
+    background: $page-color !important;
+    color: $page-text !important;
 
     &__divider {
         border: 1px solid $secondary-color !important;
