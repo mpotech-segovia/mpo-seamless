@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="header__top">
+        <div class="header__top" v-if="!isMobile()">
             <v-container>
                 <div class="header__cont">
                     <v-row>
@@ -39,7 +39,7 @@
                 </div>
             </v-container>
         </div>
-        <Navbar></Navbar>
+        <Navbar v-if="!isMobile()"></Navbar>
     </div>
 </template>
 
@@ -65,7 +65,17 @@ export default {
         headerDate() {
             this.date = moment().format('ddd, MMMM D, h:mm:ss A');
         },
+
+        isMobile() {
+            if( screen.width <= 906 ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     },
+    
     created() {
         this.date = moment().format('ddd, MMMM D, h:mm:ss A');
         setInterval(() => {

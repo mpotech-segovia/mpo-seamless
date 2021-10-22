@@ -11,6 +11,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/mobile-home',
+    name: 'HomeMobile',
+    component: () => import('../views/mobile/HomeMobile.vue')
+  },
+  {
     path: '/register',
     name: 'Register',
     component: () => import('../views/Register.vue')

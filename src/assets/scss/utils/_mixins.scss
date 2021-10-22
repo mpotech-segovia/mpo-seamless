@@ -1,5 +1,6 @@
 @use './_colors.scss' as *;
 @use './_borders.scss' as *;
+@use './_breakpoint.scss' as *;
 
 @mixin transition($transition) {
 	-webkit-transition: all $transition ease-in-out;
@@ -44,4 +45,34 @@
 
 @mixin page-padding() {
 	padding: 25px 0;
+}
+
+@mixin sm {
+    @media (min-width: $small-phone) and (max-width: $phone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $phone) and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: $tablet) and (max-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $laptop) and (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin ultra-wide {
+    @media (max-width: $ultra-wide) {
+        @content;
+    }
 }
