@@ -1,37 +1,56 @@
 <template>
     <div class="game-frame">
         <v-container>
-            <div class="game-frame__container">
-                <div class="game-frame__header">
-                    <h4>Ambrosia</h4>
-                    <div class="header-settings">
-                        <div class="settings-fullscreen">
-                            <v-btn class="fullscreen" :class="{ active : fullscreen }" fab small depressed @click="fullscreen = !fullscreen">
-                                <v-icon small v-show="!fullscreen">fas fa-expand</v-icon>
-                                <v-icon small v-show="fullscreen">fas fa-compress</v-icon>
-                            </v-btn>
-                            <!-- <v-btn class="compress" fab small depressed title="Exit Fullscreen" @click="fullscreen = !fullscreen" v-else><v-icon small>fas fa-compress</v-icon></v-btn> -->
-                        </div>
-                        <div class="settings-close">
-                            <v-btn fab small depressed title="Close Game" to="/"><v-icon small>fas fa-times</v-icon></v-btn>
+            <fullscreen v-model="fullscreen" :teleport="teleport" :page-only="pageOnly">
+                <div class="game-frame__container fullscreen-wrapper">
+                    <div class="game-frame__header">
+                        <h4>Ambrosia</h4>
+                        <div class="header-settings">
+                            <div class="settings-fullscreen">
+                                <v-btn class="fullscreen" :class="{ active : fullscreen }" fab small depressed
+                                    @click="toggle">
+                                    <v-icon small v-show="!fullscreen">fas fa-expand</v-icon>
+                                    <v-icon small v-show="fullscreen">fas fa-compress</v-icon>
+                                </v-btn>
+                            </div>
+                            <div class="settings-close">
+                                <v-btn fab small depressed title="Close Game" to="/">
+                                    <v-icon small>fas fa-times</v-icon>
+                                </v-btn>
+                            </div>
                         </div>
                     </div>
+                    <div class="game-frame__iframe-not-active" v-show="!fullscreen">
+                        <iframe src="https://cf-mt-cdn2.relaxg.com/casino/launcher.html?partner=twin&gameid=artoandthesevendeadlyspinsmegaways&lang=en_US&partnerid=186&ticket=&moneymode=fun&homeurl=https://games-twincasino.igamingcloud.com/Redirect/Lobby&jurisdiction=MT&channel=web" frameborder="0"></iframe>
+                    </div>
+                    <div class="game-frame__iframe-active" v-show="fullscreen">
+                        <iframe src="https://cf-mt-cdn2.relaxg.com/casino/launcher.html?partner=twin&gameid=artoandthesevendeadlyspinsmegaways&lang=en_US&partnerid=186&ticket=&moneymode=fun&homeurl=https://games-twincasino.igamingcloud.com/Redirect/Lobby&jurisdiction=MT&channel=web" frameborder="0"></iframe>
+                    </div>
                 </div>
-                <div class="game-frame__iframe">
-                    <iframe src="https://cdn.aisgaming.com/ConcubinesLust/main.html?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJEYXRlVGltZSI6IjYzNzc0NjU2MjI4MjU1NzQ4OSIsIlZQbGF5ZXJJZCI6IjI2MjU0MSIsIlZlbmRvcklkIjoiNiIsIlBsYXllcklkIjoibDI4emptemw4dTM5NiIsIm5iZiI6MTYzOTAzNDIyOCwiZXhwIjoxNjM5MTQ1ODI4LCJpYXQiOjE2MzkwMzQyMjh9.WU_HginJ6d4TVBKwP1Ck_01HnUWb2HN0t0sVNgYHk3c" allowfullscreen="true" frameborder="0"></iframe>
-                </div>
-            </div>
+            </fullscreen>
         </v-container>
     </div>
 </template>
 
 <script>
+    import { component } from 'vue-fullscreen'
+
     export default {
         name: 'GameFrame',
 
-        data() {
+        components: {
+            fullscreen: component
+        },
+        data () {
             return {
                 fullscreen: false,
+                teleport: false,
+                pageOnly: false
+            }
+        },
+        methods: {
+            toggle () {
+                this.fullscreen = !this.fullscreen
             }
         }
     }
