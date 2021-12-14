@@ -1,5 +1,4 @@
 @use "../utils/_index.scss" as *;
-@import "../components/_index.scss";
 
 .header {
     z-index: 999;
@@ -8,7 +7,7 @@
     &__top {
         background: $header-color;
         color: $header-text;
-        font-size: 13px;
+        font-size: 12px;
 
         .header-marquee {
             display: flex;
@@ -28,6 +27,7 @@
                 display: flex;
                 align-items: center;
                 margin-right: 20px;
+                max-width: 320px;
             }
             .form-button {
                 .v-btn {

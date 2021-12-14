@@ -1,0 +1,169 @@
+@use "../../utils/_index.scss" as *;
+
+.provider-select {
+    align-self: center;
+
+    .select-provider {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+
+        @include sm {
+            max-width: 250px;
+            margin: 15px auto 0;
+        }
+
+        &__wrapper {
+            position: relative;
+
+            .select-provider__placeholder {
+                background: #284077;
+                border-radius: $border-radius;
+                padding: 0 45px 0 22px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+
+                @include sm {
+                    background: $primary-gradient;
+                    height: 40px;
+                    font-size: 12px;
+                }
+            }
+
+            .select-arrow__container {
+                width: 13px;
+                height: 7px;
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                .select-provider__arrow {
+                    transform: rotate(45deg) translateY(-50%) scale(0.8);
+                    border: solid;
+                    border-color: #c3ccd9;
+                    border-width: 0 2px 2px 0;
+                    padding: 4px;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    user-select: none;
+                }
+            }
+
+            &.active {
+                .select-arrow__container {
+                    transform: translateY(-50%) scaleY(-1);
+                }
+            }
+        }
+
+        &__list-dropdown-container {
+
+            .select-provider-list {
+                background: $c-white;
+                border-radius: $border-radius;
+                box-shadow: $box-shadow;
+                width: 830px;
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                top: 70px;
+                padding: 15px;
+                display: flex;
+                flex-wrap: wrap;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    border-style: solid;
+                    border-width: 13px 10px;
+                    border-color: transparent transparent #fff transparent;
+                    right: 70px;
+                    top: -25px;
+                }
+
+                .list-item {
+                    min-width: 180px;
+                    cursor: pointer;
+                    padding: 0;
+                    margin: 2px 10px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                    color: $c-black;
+                    @include transition(0.15s);
+
+                    .list-item-content {
+                        display: flex;
+                        align-items: center;
+                        height: 39px;
+
+                        .provider-icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 3px;
+                            margin: 0 18px 0 3px;
+                            border-radius: 50%;
+                            background: #e8ecf6;
+                            width: 33px;
+                            height: 33px;
+
+                            img {
+                                width: 100%;
+                                max-width: 25px;
+                                max-height: 25px;
+                                height: auto;
+                                position: relative;
+                            }
+                        }
+
+                        .provider-name {
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    &:hover {
+                        background: $primary-color;
+                        color: $c-white;
+                        @include transition(0.15s);
+                    }
+                }
+
+                .close-provider-list {
+                    background: rgba(0,0,0,0.1);
+                    position: absolute;
+                    right: 8px;
+                    display: none;
+
+                    .v-icon {
+                        color: $c-black;
+                    }
+                }
+
+                @include sm {
+                    position: fixed;
+                    top: 55px;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    border-radius: 0;
+                    padding: 10px;
+                    z-index: 6;
+                    overflow-y: auto;
+
+                    .close-provider-list {
+                        display: block;
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

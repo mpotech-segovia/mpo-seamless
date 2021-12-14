@@ -11,7 +11,12 @@
 					<v-icon>fas fa-angle-right</v-icon>
 				</v-btn>
 			</template>
-			<v-carousel-item v-for="(slide, i) in slides" :key="i" :src="slide.imgSrc"></v-carousel-item>
+			<span v-if="isMobile()">
+				<v-carousel-item v-for="(slide, i) in slidesMobile" :key="i" :src="slide.imgSrc"></v-carousel-item>
+			</span>
+			<span v-if="!isMobile()">
+				<v-carousel-item v-for="(slide, i) in slidesDesktop" :key="i" :src="slide.imgSrc"></v-carousel-item>
+			</span>
 			<div class="slider-jackpot">
 				<h3>Current Jackpot</h3>
 				<h1>{{ jackpot }}</h1>
@@ -26,18 +31,35 @@
 
 		data() {
 			return {
-				slides: [{
+				slidesDesktop: [{
 					imgSrc: require('@/assets/img/slider-img/slider-1.jpg')
 				},
 				{
 					imgSrc: require('@/assets/img/slider-img/slider-1.jpg')
 				}],
+				slidesMobile: [{
+					imgSrc: require('@/assets/img/slider-img/phone-slider-1.jpg')
+				},
+				{
+					imgSrc: require('@/assets/img/slider-img/phone-slider-1.jpg')
+				},],
 				jackpot: 'IDR 255,778,920',
 			}
 		},
 
 		methods: {
-			
-		},
+			isMobile() {
+				if( screen.width <= 906 ) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+		}
 	}
 </script>
+
+<style lang="scss">
+	@import "@/assets/scss/components/home/_slider.scss";
+</style>

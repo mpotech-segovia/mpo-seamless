@@ -1,33 +1,45 @@
-@use "../utils/_index.scss" as *;
+@use "../../utils/_index.scss" as *;
 
 .transaction {
-    &__withdraw {
-        .withdraw-form {
+    &__deposit {
+        .deposit-form {
             @include page-form(20px 25px 25px);
             
             .form-title {
-                @include page-header(600, $page-text, 15px)
+                @include page-header(600, $page-text, 30px);
             }
-    
-            .form-withdraw {
+
+            .form-deposit {
                 .form-group {
                     margin-bottom: 20px;
-    
+
                     .label-textfield {
                         font-size: 14px;
                         font-weight: 400;
+
+                        &-caption {
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
+
+                        @include sm {
+
+                            &-caption {
+                                font-size: 10px;
+                            }
+                        }
                     }
-    
+
                     &.show-bank {
                         .bank-item {
                             @include flex-item(center);
-    
+
                             .bank-img {
                                 img {
                                     @include image-fit(130px, 60px, contain);
                                 }
                             }
-    
+
                             .bank-account {
                                 font-size: 13px;
                                 ul {
@@ -37,19 +49,44 @@
                                     }
                                 }
                             }
+
+                            @include sm {
+                                flex-wrap: nowrap;
+
+                                .bank-img {
+                                    img {
+                                        width: 80px;
+                                    }
+                                }
+
+                                .bank-account {
+                                    font-size: 11px;
+                                    ul {
+                                        padding-left: 15px;
+                                    }
+                                }
+                            }
                         }
                     }
-    
-                    .withdraw-conversion {
+
+                    .deposit-conversion {
                         @include flex-item(flex-start);
-    
+
                         .v-icon {
                             color: $page-text;
                         }
+
+                        @media (max-width: $laptop) {
+                            flex-wrap: nowrap;
+                        }
+                    }
+
+                    @include sm {
+                        margin-bottom: 30px;
                     }
                 }
-    
-                .withdraw-button {
+
+                .deposit-button {
                     max-width: 350px;
                     margin: 30px auto 0;
                     .v-btn {
@@ -58,44 +95,70 @@
                     }
                 }
             }
+
+            @include sm {
+                padding: 20px 15px 25px;
+
+                .form-title {
+                    font-size: 20px;
+                }
+            }
         }
-    
-        .withdraw-info {
+
+        .deposit-info {
             @include page-form(0);
             overflow: hidden;
-    
+            margin-top: 30px;
+
             .info-header {
                 @include flex-item(flex-start);
                 background: $secondary-color;
                 padding: 15px 25px;
-    
+
                 .v-icon {
                     color: $secondary-text;
                     margin-right: 10px;
                 }
-    
+
                 h3 {
                     @include page-header(500, $secondary-text, 0);
                 }
+
+                
             }
-    
+
             .info-content {
                 padding: 20px 25px;
             }
+
+            @include sm {
+                .info-header {
+                    padding: 15px 20px;
+                }
+
+                .info-content {
+                    padding: 15px 20px;
+                    font-size: 13px;
+                }
+            }
         }
-    
-        .withdraw-history {
+
+        .deposit-history {
             @include page-form(25px 25px);
-    
+            margin-top: 30px;
+
             .history-header {
-                @include flex-item(flex-start);
-                margin-bottom: 20px;
+                margin-bottom: 15px;
                 
                 .delete {
                     background: $tertiary-gradient !important;
                     color: $c-white;
                     margin-left: auto;
                 }
+            }
+
+            @include sm {
+                padding: 20px 15px 25px;
             }
         }
     }

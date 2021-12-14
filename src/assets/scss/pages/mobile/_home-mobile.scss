@@ -1,0 +1,114 @@
+@use "../../utils/_index.scss" as *;
+
+.home-mobile {
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .form-button {
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 10px;
+            font-weight: 600;
+
+            &.login {
+                background: $primary-gradient;
+            }
+
+            &.register {
+                background: $tertiary-gradient;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $c-white;
+        }
+    }
+
+    &__game {
+        padding: 10px;
+        background: $primary-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+        .game-item {
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            border-radius: $border-radius;
+            border: 1px solid rgba(255,255,255,0.15);
+
+            a {
+                text-decoration: none;
+                color: $primary-text;
+            }
+
+            .game-img {
+                padding: 10px 5px 0;
+                img {
+                    @include image-fit(100%, 85px, contain);
+                }
+            }
+
+            .game-title {
+                padding: 0 10px 8px;
+                font-weight: 500;
+                font-size: 11px;
+                @include text-elipsis();
+            }
+        }
+    }
+
+    &__download {
+        background: $primary-color;
+
+        .download-wrapper {
+            @include flex-item(flex-start);
+
+            .download-content {
+                @include flex-item(flex-start);
+
+                .download-icon {
+                    padding: 10px;
+                    background: #203A7D;
+                    border-radius: 5px;
+                    margin-right: 8px;
+                    @include flex-item(center);
+
+                    img {
+                        @include image-fit(30px, 30px, contain);
+                    }
+                }
+
+                .download-info {
+                    h5, h6 {
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .download-button {
+                margin-left: auto;
+
+                .v-btn {
+                    background: $primary-gradient;
+                    color: $c-white;
+                }
+            }
+        }
+    }
+
+    &__seo {
+        background: $primary-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+
+        .home__seo {
+            padding: 0;
+        }
+    }
+}

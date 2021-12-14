@@ -48,241 +48,258 @@
 </template>
 
 <script>
-import Seo from '@/components/home/Seo.vue'
+    import Seo from '@/components/home/Seo.vue'
 
-export default {
-    name: 'Game',
+    export default {
+        name: 'Game',
 
-    components: {
-		Seo,
-	},
-
-    data() {
-        return {
-            providerToShow: 9,
-            showMore: true,
-            searchGame: '',
-            select_category: 'All Games',
-            category: [{
-                id: 0,
-                name: 'All Games'
-            },
-            {
-                id: 1,
-                name: 'Video Slots'
-            },
-            {
-                id: 2,
-                name: 'Bonus Buy Slots'
-            },
-            {
-                id: 3,
-                name: 'Megaway Slots'
-            },
-            {
-                id: 4,
-                name: 'Bacarrat News'
-            },
-            {
-                id: 5,
-                name: 'Classic Slots'
-            },
-            {
-                id: 6,
-                name: 'Bacarrat'
-            },
-            {
-                id: 7,
-                name: 'Blackjack'
-            },
-            {
-                id: 8,
-                name: 'Roulette'
-            },],
-            providerList: [{
-                imgSrc: require('@/assets/img/provider/pp.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/isb.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/ygg.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/spade.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/png.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/cq9.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/pp.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/isb.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/ygg.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/spade.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/png.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/cq9.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/pp.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/isb.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/ygg.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/spade.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/png.png'),
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider/cq9.png'),
-                link: '',
-            },],
-            gameList: [{
-                imgSrc: require('@/assets/img/game-img/1.jpg'),
-                gameTitle: 'Phoenix Forge',
-                link: '#',
-                category: 'Video Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/2.jpg'),
-                gameTitle: 'Empty The Bank',
-                link: '#',
-                category: 'Bonus Buy Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/3.jpg'),
-                gameTitle: 'Heart of Rio',
-                link: '#',
-                category: 'Megaway Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/4.jpg'),
-                gameTitle: 'Lucky Lighting',
-                link: '#',
-                category: 'Bacarrat News',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/5.jpg'),
-                gameTitle: 'Dragon Hot Hold And Spin',
-                link: '#',
-                category: 'Classic Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/6.jpg'),
-                gameTitle: '5 Lion Megaway',
-                link: '#',
-                category: 'Bacarrat',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/7.jpg'),
-                gameTitle: 'Cash Evalator',
-                link: '#',
-                category: 'Blackjack',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/8.jpg'),
-                gameTitle: 'Hokkaido Wolf',
-                link: '#',
-                category: 'Roulette',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/9.jpg'),
-                gameTitle: 'Cash Evalator',
-                link: '#',
-                category: 'Video Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/10.jpg'),
-                gameTitle: 'The Magic Gaudron',
-                link: '#',
-                category: 'Bonus Buy Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/11.jpg'),
-                gameTitle: 'Bigger Bass Bonanza',
-                link: '#',
-                category: 'Megaway Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/12.jpg'),
-                gameTitle: 'Bigger Bass Bonanza',
-                link: '#',
-                category: 'Bacarrat News',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/13.jpg'),
-                gameTitle: 'Bigger Bass Bonanza',
-                link: '#',
-                category: 'Classic Slots',
-            },
-            {
-                imgSrc: require('@/assets/img/game-img/14.jpg'),
-                gameTitle: 'Bigger Bass Bonanza',
-                link: '#',
-                category: 'Baccarat',
-            },]
-        }
-    },
-
-    methods: {
-        viewMore() {
-            this.providerToShow += 10;
-            this.showMore = this.providerToShow === this.limitProvider.length
+        components: {
+            Seo,
         },
-    },
-    
-    computed: {
-        limitProvider(){
-            return this.providerToShow ? this.providerList.slice(0,this.providerToShow) : this.providerList
+
+        data() {
+            return {
+                providerToShow: 9,
+                showMore: true,
+                searchGame: '',
+                select_category: 'All Games',
+                category: [{
+                    id: 0,
+                    name: 'All Games'
+                },
+                {
+                    id: 1,
+                    name: 'Video Slots'
+                },
+                {
+                    id: 2,
+                    name: 'Bonus Buy Slots'
+                },
+                {
+                    id: 3,
+                    name: 'Megaway Slots'
+                },
+                {
+                    id: 4,
+                    name: 'Bacarrat News'
+                },
+                {
+                    id: 5,
+                    name: 'Classic Slots'
+                },
+                {
+                    id: 6,
+                    name: 'Bacarrat'
+                },
+                {
+                    id: 7,
+                    name: 'Blackjack'
+                },
+                {
+                    id: 8,
+                    name: 'Roulette'
+                },],
+                providerList: [{
+                    imgSrc: require('@/assets/img/provider/pp.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/isb.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/ygg.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/spade.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/png.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/cq9.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/pp.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/isb.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/ygg.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/spade.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/png.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/cq9.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/pp.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/isb.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/ygg.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/spade.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/png.png'),
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider/cq9.png'),
+                    link: '',
+                },],
+                gameList: [{
+                    imgSrc: require('@/assets/img/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                    category: 'Video Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                    category: 'Bonus Buy Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/3.jpg'),
+                    gameTitle: 'Heart of Rio',
+                    link: '#',
+                    category: 'Megaway Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/4.jpg'),
+                    gameTitle: 'Lucky Lighting',
+                    link: '#',
+                    category: 'Bacarrat News',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/5.jpg'),
+                    gameTitle: 'Dragon Hot Hold And Spin',
+                    link: '#',
+                    category: 'Classic Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/6.jpg'),
+                    gameTitle: '5 Lion Megaway',
+                    link: '#',
+                    category: 'Bacarrat',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/7.jpg'),
+                    gameTitle: 'Cash Evalator',
+                    link: '#',
+                    category: 'Blackjack',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/8.jpg'),
+                    gameTitle: 'Hokkaido Wolf',
+                    link: '#',
+                    category: 'Roulette',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/9.jpg'),
+                    gameTitle: 'Cash Evalator',
+                    link: '#',
+                    category: 'Video Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/10.jpg'),
+                    gameTitle: 'The Magic Gaudron',
+                    link: '#',
+                    category: 'Bonus Buy Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/11.jpg'),
+                    gameTitle: 'Bigger Bass Bonanza',
+                    link: '#',
+                    category: 'Megaway Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/12.jpg'),
+                    gameTitle: 'Bigger Bass Bonanza',
+                    link: '#',
+                    category: 'Bacarrat News',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/13.jpg'),
+                    gameTitle: 'Bigger Bass Bonanza',
+                    link: '#',
+                    category: 'Classic Slots',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/14.jpg'),
+                    gameTitle: 'Bigger Bass Bonanza',
+                    link: '#',
+                    category: 'Baccarat',
+                },]
+            }
         },
-        filterGame() {
-            var category = this.select_category
-            
-            if (category === 'All Games') {
-                return this.gameList
-            } else {
-                return this.gameList.filter(game_category => {
-                        return category === "All Games" || game_category.category === category
-                    },
-                )
+
+        methods: {
+            viewMore() {
+                this.providerToShow += 10;
+                this.showMore = this.providerToShow === this.limitProvider.length
+            },
+            isMobile() {
+                if( screen.width <= 906 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            },
+        },
+        
+        computed: {
+            limitProvider(){
+                return this.providerToShow ? this.providerList.slice(0,this.providerToShow) : this.providerList
+            },
+            filterGame() {
+                var category = this.select_category
+                
+                if (category === 'All Games') {
+                    return this.gameList
+                } else {
+                    return this.gameList.filter(game_category => {
+                            return category === "All Games" || game_category.category === category
+                        },
+                    )
+                }
+            }
+        },
+
+        created() {
+            if (this.isMobile()) {
+                this.$router.push('/game-mobile').catch(()=>{});
+            }
+            else {
+                this.$router.push('/game').catch(()=>{});
             }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>

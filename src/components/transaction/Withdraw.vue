@@ -11,7 +11,7 @@
                                     <label class="label-textfield" for="">Nama Bank</label>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1">
-                                    <label class="label-textfield" for="">BCA</label>
+                                    <h3 for="">BCA</h3>
                                 </v-col>
                             </v-row>
                         </div>
@@ -21,8 +21,8 @@
                                     <label class="label-textfield" for="">Nomor Rekening</label>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1">
-                                    <div class="label-textfield font-weight-medium" for="">JACK THE RIPPER</div>
-                                    <div class="label-textfield" for="">08213872048</div>
+                                    <h4>JACK THE RIPPER</h4>
+                                    <h5 class="font-weight-medium" for="">2891 7431 02</h5>
                                 </v-col>
                             </v-row>
                         </div>
@@ -44,15 +44,15 @@
                                 </v-col>
                                 <v-col xl="6" lg="6" md="6" sm="12" cols="12" class="py-1 withdraw-conversion">
                                     <v-text-field label="0.00" type="number" solo rounded hide-details="auto" flat
-                                        required></v-text-field>
+                                        required v-model="withdraw_amount" @keyup="calculateCurrency()"></v-text-field>
                                     <span class="mx-4">
                                         <v-icon small>fas fa-equals</v-icon>
                                     </span>
-                                    <v-text-field label="RP" type="number" solo rounded hide-details="auto" flat
-                                        required></v-text-field>
+                                    <v-text-field label="IDR" solo rounded hide-details="auto" flat
+                                        required v-model="withdraw_currency"></v-text-field>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1">
-                                    <label class="label-textfield" for="">Contoh: setoran deposit 50.000, tulis Rp 50 (
+                                    <label class="label-textfield-caption" for="">Contoh: setoran deposit 50.000, tulis Rp 50 (
                                         3 digit dihilangkan )</label>
                                 </v-col>
                             </v-row>
@@ -67,7 +67,7 @@
                 <BankTransaction></BankTransaction>
             </v-col>
         </v-row>
-        <div class="withdraw-info mt-12">
+        <div class="withdraw-info">
             <div class="info-header">
                 <v-icon>fas fa-info-circle</v-icon>
                 <h3>Informasi</h3>
@@ -86,18 +86,11 @@
                 erat. Arcu, ullamcorper nullam elementum viverra.
             </div>
         </div>
-        <div class="withdraw-history mt-12">
+        <div class="withdraw-history">
             <div class="history-header">
                 <h3>Riwayat Withdraw</h3>
-                <v-btn class="delete" rounded>
-                    <v-icon small class="mr-2">fas fa-trash</v-icon> Delete Selected
-                </v-btn>
             </div>
-            <v-data-table :headers="headers" :items="depositData" :items-per-page="5" mobile-breakpoint="0"
-            :footer-props="{
-                prevIcon: 'fas fa-angle-left',
-                nextIcon: 'fas fa-angle-right'
-            }"></v-data-table>
+            <v-data-table :headers="headers" :items="withdrawData" :items-per-page="5" mobile-breakpoint="0" hide-default-footer></v-data-table>
         </div>
     </div>
 </template>
@@ -116,6 +109,8 @@
             return {
                 wallet: ['Dompet Utama', 'Dompet Porker'],
                 proofPayment: [],
+                withdraw_amount: "",
+                withdraw_currency: "",
                 headers: [{
                     text: 'Nomor',
                     align: 'start',
@@ -125,20 +120,23 @@
                 }, 
                 { 
                     text: 'Tanggal', 
+                    sortable: false,
                     divider: true,
                     value: 'date',
                 }, 
                 { 
                     text: 'Jumlah', 
+                    sortable: false,
                     divider: true,
                     value: 'amount',
                 },
                 { 
                     text: 'Status', 
+                    sortable: false,
                     divider: true,
                     value: 'status',
                 },],
-                depositData: [{
+                withdrawData: [{
                     number: '1',
                     date: 'October 13, 2021',
                     amount: '999.99',
@@ -175,10 +173,17 @@
                     status: 'Rejected',
                 },],
             }
-        }
+        },
+
+        methods: {
+            calculateCurrency() {
+                var currencyResult = this.withdraw_amount*1000
+                this.withdraw_currency = ("IDR: " + currencyResult)
+            }
+        },
     }
 </script>
 
 <style lang="scss" scoped>
-    @import '@/assets/scss/pages/_withdraw.scss';
+    @import '@/assets/scss/components/transaction/_withdraw.scss';
 </style>

@@ -1,0 +1,60 @@
+@use "../../utils/_index.scss" as *;
+
+.promotions-mobile {
+    @include page-padding();
+
+    &__filter {
+        max-width: 150px;
+    }
+
+    &__list {
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 15px;
+
+        .promo-item {
+            @include page-form(0);
+            overflow: hidden;
+
+            a {
+                text-decoration: none;
+            }
+
+            .promo-img {
+                display: flex;
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .promo-bottom {
+                @include flex-item(flex-start);
+                flex-wrap: nowrap;
+                padding: 10px 13px;
+
+                .promo-title {
+                    text-align: center;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    color: $page-text;
+                    font-size: 12px;
+                    @include text-elipsis();
+                    margin-right: 10px;
+                }
+
+                .promo-button {
+                    margin-left: auto;
+                    .v-btn {
+                        background: $primary-gradient;
+                        color: $c-white;
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

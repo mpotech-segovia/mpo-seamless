@@ -164,11 +164,11 @@ export default {
                 iconSrcActive: require('@/assets/img/navbar-icon/lottery.svg'),
                 iconSrcInactive: require('@/assets/img/navbar-icon/lottery-white.svg'),
                 navtitle: 'Lottery',
-                link: '#/provider',
+                link: '#/lottery',
                 providerList: [{
                     imgSrc: require('@/assets/img/provider-img/mpo4d.webp'),
                     providerName: 'MPO4D',
-                    link: '#/game',
+                    link: '#/lottery',
                 },]
             },
             {

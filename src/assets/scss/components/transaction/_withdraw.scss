@@ -1,55 +1,53 @@
-@use "../utils/_index.scss" as *;
+@use "../../utils/_index.scss" as *;
 
 .transaction {
-    &__deposit {
-        .deposit-form {
+    &__withdraw {
+        .withdraw-form {
             @include page-form(20px 25px 25px);
             
             .form-title {
-                @include page-header(600, $page-text, 15px)
+                @include page-header(600, $page-text, 30px)
             }
-
-            .form-deposit {
+    
+            .form-withdraw {
                 .form-group {
                     margin-bottom: 20px;
-
+    
                     .label-textfield {
                         font-size: 14px;
                         font-weight: 400;
-                    }
 
-                    &.show-bank {
-                        .bank-item {
-                            @include flex-item(center);
+                        &-caption {
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
 
-                            .bank-img {
-                                img {
-                                    @include image-fit(130px, 60px, contain);
-                                }
-                            }
+                        @include sm {
 
-                            .bank-account {
-                                font-size: 13px;
-                                ul {
-                                    list-style: none;
-                                    li {
-                                        margin-bottom: 3px;
-                                    }
-                                }
+                            &-caption {
+                                font-size: 10px;
                             }
                         }
                     }
-
-                    .deposit-conversion {
+    
+                    .withdraw-conversion {
                         @include flex-item(flex-start);
-
+    
                         .v-icon {
                             color: $page-text;
                         }
+
+                        @media (max-width: $laptop) {
+                            flex-wrap: nowrap;
+                        }
+                    }
+
+                    @include sm {
+                        margin-bottom: 30px;
                     }
                 }
-
-                .deposit-button {
+    
+                .withdraw-button {
                     max-width: 350px;
                     margin: 30px auto 0;
                     .v-btn {
@@ -58,44 +56,68 @@
                     }
                 }
             }
-        }
 
-        .deposit-info {
+            @include sm {
+                padding: 20px 15px 25px;
+
+                .form-title {
+                    font-size: 20px;
+                }
+            }
+        }
+    
+        .withdraw-info {
             @include page-form(0);
             overflow: hidden;
-
+            margin-top: 30px;
+    
             .info-header {
                 @include flex-item(flex-start);
                 background: $secondary-color;
                 padding: 15px 25px;
-
+    
                 .v-icon {
                     color: $secondary-text;
                     margin-right: 10px;
                 }
-
+    
                 h3 {
                     @include page-header(500, $secondary-text, 0);
                 }
             }
-
+    
             .info-content {
                 padding: 20px 25px;
             }
+
+            @include sm {
+                .info-header {
+                    padding: 15px 20px;
+                }
+
+                .info-content {
+                    padding: 15px 20px;
+                    font-size: 13px;
+                }
+            }
         }
-
-        .deposit-history {
+    
+        .withdraw-history {
             @include page-form(25px 25px);
-
+            margin-top: 30px;
+    
             .history-header {
-                @include flex-item(flex-start);
-                margin-bottom: 20px;
+                margin-bottom: 15px;
                 
                 .delete {
                     background: $tertiary-gradient !important;
                     color: $c-white;
                     margin-left: auto;
                 }
+            }
+
+            @include sm {
+                padding: 20px 15px 25px;
             }
         }
     }

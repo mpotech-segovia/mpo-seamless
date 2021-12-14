@@ -1,0 +1,41 @@
+@use "../../utils/_index.scss" as *;
+
+.provider-list-wrapper {
+    background: $primary-color;
+    padding: 15px 10px;
+    margin-top: 15px;
+
+    .provider-list-icon {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+
+        .provider-item {
+            border-radius: 5px;
+            background: #203A7D;
+            box-shadow: $box-shadow;
+            text-align: center;
+            padding: 9px 7px 7px;
+
+            a {
+                text-decoration: none;
+                color: $primary-text;
+            }
+
+            .provider-icon {
+                width: 25px;
+                height: 25px;
+                margin: auto;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            h6 {
+                font-weight: 600;
+                margin-top: 5px;
+            }
+        }
+    }
+}

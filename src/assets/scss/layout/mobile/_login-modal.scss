@@ -1,0 +1,57 @@
+@use "../../utils/_index.scss" as *;
+@import "../../components/_index.scss";
+
+.login-modal {
+    background: $primary-color;
+    color: $primary-text;
+
+    &__header {
+        padding: 17px 18px;
+        @include flex-item(flex-start);
+
+        h3 {
+            margin-left: 10px;
+            font-weight: 500;
+        }
+    }
+
+    &__form {
+        padding: 0 18px 15px;
+
+        .form-group {
+            &.forgot-password {
+                text-align: right;
+                margin: 5px 0;
+
+                a {
+                    color: $primary-text;
+                    text-decoration: none;
+                    font-size: 12px;
+                    font-style: italic;
+                }
+            }
+
+            &.login-button {
+                .v-btn {
+                    background: $primary-gradient;
+                    color: $c-white;
+                }
+            }
+
+            &.register-content {
+                margin-top: 10px;
+                text-align: center;
+
+                h5 {
+                    font-weight: 500;
+
+                    a {
+                        text-decoration: none;
+                        color: $secondary-color;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

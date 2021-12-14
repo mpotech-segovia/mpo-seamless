@@ -1,0 +1,53 @@
+@use "../../utils/_index.scss" as *;
+
+.provider-mobile {
+    @include page-padding();
+
+    &__category-list {
+        .provider-list-wrapper {
+            margin-top: 0;
+        }
+    }
+
+    &__prov-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-gap: 15px;
+
+        .prov-item {
+            @include page-form(0);
+            overflow: hidden;
+
+            a {
+                text-decoration: none;
+            }
+            
+            .prov-img {
+                display: flex;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .game-title {
+                text-align: center;
+                font-weight: 500;
+                padding: 8px 5px;
+                text-transform: uppercase;
+                color: $page-text;
+                font-size: 12px;
+                @include text-elipsis();
+            }
+        }
+    }
+
+    &__seo {
+        @include page-form(0);
+        margin-top: 20px;
+
+        .home__seo {
+            padding: 0;
+        }
+    }
+}

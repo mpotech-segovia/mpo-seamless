@@ -12,11 +12,18 @@
         background: $primary-gradient;
         th {
             border-top: 1px solid $secondary-color !important;
+            padding: 0 10px !important;
         }
     }
 
     th {
         color: $c-white !important;
+    }
+
+    tbody {
+        td {
+            padding: 0 10px !important;
+        }
     }
 
     .v-data-footer {

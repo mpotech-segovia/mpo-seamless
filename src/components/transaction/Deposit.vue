@@ -15,8 +15,8 @@
                                     </v-select>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1">
-                                    <div class="label-textfield font-weight-medium" for="">JACK THE RIPPER</div>
-                                    <div class="label-textfield" for="">2891 7431 02</div>
+                                    <h4>JACK THE RIPPER</h4>
+                                    <h5 class="font-weight-medium" for="">2891 7431 02</h5>
                                 </v-col>
                             </v-row>
                         </div>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group show-bank">
                             <v-row>
-                                <v-col xl="2" lg="3" md="3" sm="12" cols="12"></v-col>
+                                <v-col xl="2" lg="3" md="3" sm="12" cols="12" class="d-none d-md-block"></v-col>
                                 <v-col xl="6" lg="6" md="6" sm="12" cols="12" class="py-1">
                                     <div class="bank-item">
                                         <div class="bank-img">
@@ -69,15 +69,15 @@
                                 </v-col>
                                 <v-col xl="6" lg="6" md="6" sm="12" cols="12" class="py-1 deposit-conversion">
                                     <v-text-field label="0.00" type="number" solo rounded hide-details="auto" flat
-                                        required></v-text-field>
+                                        required v-model="deposit_amount" @keyup="calculateCurrency()"></v-text-field>
                                     <span class="mx-4">
                                         <v-icon small>fas fa-equals</v-icon>
                                     </span>
-                                    <v-text-field label="RP" type="number" solo rounded hide-details="auto" flat
-                                        required></v-text-field>
+                                    <v-text-field label="IDR" solo rounded hide-details="auto" flat
+                                        required disabled v-model="deposit_currency"></v-text-field>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1">
-                                    <label class="label-textfield" for="">Contoh: setoran deposit 50.000, tulis Rp 50 (
+                                    <label class="label-textfield-caption" for="">Contoh: setoran deposit 50.000, tulis Rp 50 (
                                         3 digit dihilangkan )</label>
                                 </v-col>
                             </v-row>
@@ -92,7 +92,7 @@
                                         flat required></v-text-field>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1 d-flex align-center py-1">
-                                    <label class="label-textfield" for="">Maksimal 32 Karakter</label>
+                                    <label class="label-textfield-caption" for="">Maksimal 32 Karakter</label>
                                 </v-col>
                             </v-row>
                         </div>
@@ -111,7 +111,7 @@
                                     </v-file-input>
                                 </v-col>
                                 <v-col xl="4" lg="3" md="3" sm="12" cols="12" class="py-1 d-flex align-center py-1">
-                                    <label class="label-textfield" for="">Hanya format *.jpg, *.jpeg, dan *.png yang
+                                    <label class="label-textfield-caption" for="">Hanya format *.jpg, *.jpeg, dan *.png yang
                                         diperbolehkan, maksimal 1 MB</label>
                                 </v-col>
                             </v-row>
@@ -126,7 +126,7 @@
                 <BankTransaction></BankTransaction>
             </v-col>
         </v-row>
-        <div class="deposit-info mt-12">
+        <div class="deposit-info">
             <div class="info-header">
                 <v-icon>fas fa-info-circle</v-icon>
                 <h3>Informasi</h3>
@@ -145,18 +145,11 @@
                 erat. Arcu, ullamcorper nullam elementum viverra.
             </div>
         </div>
-        <div class="deposit-history mt-12">
+        <div class="deposit-history">
             <div class="history-header">
                 <h3>Riwayat Deposit</h3>
-                <v-btn class="delete" rounded>
-                    <v-icon small class="mr-2">fas fa-trash</v-icon> Delete Selected
-                </v-btn>
             </div>
-            <v-data-table :headers="headers" :items="depositData" :items-per-page="5" mobile-breakpoint="0"
-            :footer-props="{
-                prevIcon: 'fas fa-angle-left',
-                nextIcon: 'fas fa-angle-right'
-            }"></v-data-table>
+            <v-data-table :headers="headers" :items="depositData" :items-per-page="5" mobile-breakpoint="0" hide-default-footer></v-data-table>
         </div>
     </div>
 </template>
@@ -176,6 +169,8 @@
                 bank: ['BCA', 'BRI', 'BNI', 'Mandiri', 'Bank Lain', ],
                 wallet: ['Dompet Utama', 'Dompet Porker'],
                 proofPayment: [],
+                deposit_amount: "",
+                deposit_currency: "",
                 headers: [{
                     text: 'Nomor',
                     align: 'start',
@@ -185,16 +180,19 @@
                 }, 
                 { 
                     text: 'Tanggal', 
+                    sortable: false,
                     divider: true,
                     value: 'date',
                 }, 
                 { 
                     text: 'Jumlah', 
+                    sortable: false,
                     divider: true,
                     value: 'amount',
                 },
                 { 
                     text: 'Status', 
+                    sortable: false,
                     divider: true,
                     value: 'status',
                 },],
@@ -235,10 +233,17 @@
                     status: 'Rejected',
                 },],
             }
-        }
+        },
+
+        methods: {
+            calculateCurrency() {
+                var currencyResult = this.deposit_amount*1000
+                this.deposit_currency = ("IDR: " + currencyResult)
+            }
+        },
     }
 </script>
 
 <style lang="scss" scoped>
-    @import '@/assets/scss/pages/_deposit.scss';
+    @import '@/assets/scss/components/transaction/_deposit.scss';
 </style>

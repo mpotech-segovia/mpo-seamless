@@ -1,0 +1,55 @@
+@use "../utils/_index.scss" as *;
+
+.memo {
+    @include page-padding();
+
+    &__wrapper {
+        .memo-panel {
+            min-height: 500px;
+
+            .memo-empty {
+                @include page-form(25px);
+                @include flex-item(center);
+                flex-direction: column;
+                min-height: 500px;
+
+                .v-icon {
+                    color: rgba(255,255,255,0.5);
+                    font-size: 60px !important;
+                }
+
+                h1 {
+                    font-weight: 600;
+                }
+
+                h4 {
+                    font-weight: 500;
+                    color: rgba(255,255,255,0.8);
+                }
+            }
+        }
+
+        .memo-tab {
+            @include page-form(15px);
+
+            .v-btn {
+                background: #13234C;
+                color: $secondary-text;
+
+                &.active {
+                    background: $secondary-color !important;
+                    color: $secondary-text !important;
+
+                    .v-icon {
+                        color: $secondary-text !important;
+                    }
+                }
+
+                &:hover {
+                    background: $secondary-color;
+                    @include transition(0.15s);
+                }
+            }
+        }
+    }
+}

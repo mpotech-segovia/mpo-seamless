@@ -1,28 +1,34 @@
 <template>
     <div class="bonus">
         <v-container>
-            <v-tabs grow hide-slider v-model="bonusTab">
-                <v-tab class="mr-3">
+            <div class="tabs-button">
+                <div class="tabs-button-item" :class="{ active : claimTabs }" @click="showClaim()" :disabled="claimWasClick" depressed>
                     <v-icon class="mr-3">fas fa-exchange-alt</v-icon>Klaim Bonus
-                </v-tab>
-                <v-tab class="mx-3">
+                </div>
+                <div class="tabs-button-item" :class="{ active : promoTabs }" @click="showPromo()" :disabled="promoWasClick" depressed>
                     <v-icon class="mr-3">fas fa-percentage</v-icon>Promo Gabungan
-                </v-tab>
-                <v-tab class="ml-3">
+                </div>
+                <div class="tabs-button-item" :class="{ active : historyTabs }" @click="showHistory()" :disabled="historyWasClick" depressed>
                     <v-icon class="mr-3">fas fa-history</v-icon>History Klaim
-                </v-tab>
-            </v-tabs>
-            <v-tabs-items v-model="bonusTab">
-                <v-tab-item>
-                    <ClaimBonus></ClaimBonus>
-                </v-tab-item>
-                <v-tab-item>
-                    <h1>THIS IS PROMO GABUNGAN</h1>
-                </v-tab-item>
-                <v-tab-item>
-                    <h1>THIS IS HISTORY KLAIM</h1>
-                </v-tab-item>
-            </v-tabs-items>
+                </div>
+            </div>
+            <div class="tabs-container">
+                <transition name="fade" mode="out-in">
+                    <div class="tabs-item" v-if="claimTabs">
+                        <ClaimBonus></ClaimBonus>
+                    </div>
+                </transition>
+                <transition name="fade" mode="out-in">
+                    <div class="tabs-item" v-if="promoTabs">
+                        <h1>THIS IS PROMO GABUNGAN</h1>
+                    </div>
+                </transition>
+                <transition name="fade" mode="out-in">
+                    <div class="tabs-item" v-if="historyTabs">
+                        <h1>THIS IS HISTORY KLAIM</h1>
+                    </div>
+                </transition>
+            </div>
         </v-container>
         <Seo class="mt-5"></Seo>
     </div>
@@ -42,8 +48,51 @@
 
         data() {
             return {
-                bonusTab: null,
+                claimTabs: true,
+                promoTabs: false,
+                historyTabs: false,
+                claimWasClick: true,
+                promoWasClick: false,
+                historyWasClick: false,
             }
+        },
+
+        methods: {
+            showClaim() {
+                if (this.promoTabs == true || this.historyTabs == true) {
+                    this.claimTabs = true
+                    this.promoTabs = false
+                    this.historyTabs = false
+
+                    this.claimWasClick = true
+                    this.promoWasClick = false
+                    this.historyWasClick = false
+                }
+            },
+
+            showPromo() {
+                if (this.claimTabs == true || this.historyTabs == true) {
+                    this.claimTabs = false
+                    this.promoTabs = true
+                    this.historyTabs = false
+
+                    this.claimWasClick = false
+                    this.promoWasClick = true
+                    this.historyWasClick = false
+                }
+            },
+
+            showHistory() {
+                if (this.claimTabs == true || this.promoTabs == true) {
+                    this.claimTabs = false
+                    this.promoTabs = false
+                    this.historyTabs = true
+
+                    this.claimWasClick = false
+                    this.promoWasClick = false
+                    this.historyWasClick = true
+                }
+            },
         }
     }
 </script>

@@ -1,16 +1,20 @@
 <template>
   <v-app>
-    <Header></Header>
+    <Header v-if="!isMobile()"></Header>
+    <HeaderMobile v-if="isMobile()"></HeaderMobile>
     <v-main>
       <router-view/>
     </v-main>
-    <Footer></Footer>
+    <Footer v-if="!isMobile()"></Footer>
+    <FooterMobile v-if="isMobile()"></FooterMobile>
   </v-app>
 </template>
 
 <script>
-import Header from '@/layout/Header'
-import Footer from '@/layout/Footer'
+import Header from '@/layout/Header.vue'
+import Footer from '@/layout/Footer.vue'
+import HeaderMobile from '@/layout/mobile/HeaderMobile.vue'
+import FooterMobile from '@/layout/mobile/FooterMobile.vue'
 
 export default {
   name: 'App',
@@ -18,14 +22,28 @@ export default {
   components: {
     Header,
     Footer,
+    HeaderMobile,
+    FooterMobile,
   },
 
   data: () => ({
-    //
+    
   }),
+
+  methods: {
+    isMobile() {
+        if( screen.width <= 906 ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+  }
 };
 </script>
 
 <style lang="scss">
   @import "@/assets/scss/layout/_index.scss";
+  @import "@/assets/scss/components/_index.scss";
 </style>

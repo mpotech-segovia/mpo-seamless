@@ -32,9 +32,7 @@
                         <img class="game-icon" src="@/assets/img/game-icon/slots.png">
                     </div>
                 </a>
-                <div class="provider-select">
-                    <v-select :items="provider" label="Provider" solo hide-details flat></v-select>
-                </div>
+                <ProviderSelect></ProviderSelect>
             </div>
             <div class="game-list">
                 <div class="list-title">
@@ -64,13 +62,18 @@
 </template>
 
 <script>
+    import ProviderSelect from '@/components/provider-wrapper/ProviderSelect.vue'
+
     export default {
         name: 'Games',
+
+        components: {
+            ProviderSelect
+        },
 
         data() {
             return {
                 page: 1,
-                provider: ['Pragmatic Play', 'ISOFTBET', 'YGGDRASIL', 'Spadegaming', 'PLAYnGO', 'CQ9'],
                 searchGame: '',
                 gameList: [{
                     imgSrc: require('@/assets/img/game-img/1.jpg'),
@@ -141,7 +144,8 @@
                     imgSrc: require('@/assets/img/game-img/14.jpg'),
                     gameTitle: 'Bigger Bass Bonanza',
                     link: '#',
-                },]
+                },
+                ]
             }
         },
         computed: {

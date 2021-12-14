@@ -1,38 +1,6 @@
 @use "../utils/_index.scss" as *;
 
 .home {
-    &__slider {
-        .v-carousel {
-            height: 500px !important;
-
-            .slider-jackpot {
-                position: absolute;
-                top: 50%;
-                right: 10%;
-                transform: translateY(-50%);
-                background: #2849a1 url('~@/assets/img/slider-img/bg-jackpot.png');
-                background-position: right;
-                background-repeat: no-repeat;
-                background-size: contain;
-                border-radius: $border-radius;
-                padding: 20px;
-                min-width: 400px;
-                min-height: 200px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-                h3 {
-                    color: $secondary-color;
-                    font-size: 25px;
-                }
-
-                h1 {
-                    font-size: 38px;
-                }
-            }
-        }
-    }
     &__games {
         padding-top: 40px;
 
@@ -98,14 +66,8 @@
                 }
             }
 
-            .provider-select {
-                align-self: center;
-
-                .v-select {
-                    .v-input__control {
-                        min-height: 65px !important;
-                    }
-                }
+            @media (max-width: $laptop) {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
 
@@ -312,6 +274,10 @@
                                 box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
                                 @include transition(0.15s);
                             }
+
+                            @media (max-width: $laptop) {
+                                width: 165px !important;
+                            }
                         }
 
                         .swiper-pagination {
@@ -363,6 +329,10 @@
 
         .seo-content {
             text-align: justify;
+
+            @include sm {
+                font-size: 12px;
+            }
         }
     }
 }

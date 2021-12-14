@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  import SliderSection from '@/components/home/Slider'
-  import GamesSection from '@/components/home/Games'
-  import ServiceSection from '@/components/home/Service'
-  import SeoSection from '@/components/home/Seo'
+  import SliderSection from '@/components/home/Slider.vue'
+  import GamesSection from '@/components/home/Games.vue'
+  import ServiceSection from '@/components/home/Service.vue'
+  import SeoSection from '@/components/home/Seo.vue'
 
   export default {
     name: 'Home',
@@ -33,13 +33,13 @@
         }
       }
     },
-
+    
     created() {
         if (this.isMobile()) {
-            this.$router.push('/mobile-home');
+            this.$router.push('/home-mobile').catch(()=>{});
         }
         else {
-            this.$router.push('/');
+            this.$router.push('/').catch(()=>{});
         }
     }
   }

@@ -6,7 +6,11 @@
     }
     .v-select__selections {
         color: $c-white !important;
-        font-size: 15px !important;
+        font-size: 14px;
+
+        @include sm {
+            font-size: 12px !important;
+        }
     }
     .v-label {
         color: $c-white;

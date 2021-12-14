@@ -18,7 +18,7 @@
                                     <p class="description">{{ item.newsDesc }}</p>
                                 </div>
                                 <div class="news-button">
-                                    <v-btn class="news" rounded small :to="item.link">Read More</v-btn>
+                                    <v-btn class="news" rounded small>Read More</v-btn>
                                 </div>
                             </div>
                         </a>
@@ -46,40 +46,60 @@ export default {
                 imgSrc: require('@/assets/img/promo-banner.jpg'),
                 newsTitle: 'Berita Title',
                 newsDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                link: '',
+                link: '#/news-detail',
             },
             {
                 imgSrc: require('@/assets/img/promo-banner.jpg'),
                 newsTitle: 'Berita Title',
                 newsDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                link: '',
+                link: '#/news-detail',
             },
             {
                 imgSrc: require('@/assets/img/promo-banner.jpg'),
                 newsTitle: 'Berita Title',
                 newsDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                link: '',
+                link: '#/news-detail',
             },
             {
                 imgSrc: require('@/assets/img/promo-banner.jpg'),
                 newsTitle: 'Berita Title',
                 newsDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                link: '',
+                link: '#/news-detail',
             },
             {
                 imgSrc: require('@/assets/img/promo-banner.jpg'),
                 newsTitle: 'Berita Title',
                 newsDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                link: '',
+                link: '#/news-detail',
             },
             {
                 imgSrc: require('@/assets/img/promo-banner.jpg'),
                 newsTitle: 'Berita Title',
                 newsDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                link: '',
+                link: '#/news-detail',
             },],
         }
-    }
+    },
+
+    methods: {
+            isMobile() {
+                if( screen.width <= 906 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        },
+
+        created() {
+            if (this.isMobile()) {
+                this.$router.push('/news-mobile').catch(()=>{});
+            }
+            else {
+                this.$router.push('/news').catch(()=>{});
+            }
+        }
 }
 </script>
 

@@ -1,41 +1,16 @@
 @use "../utils/_index.scss" as *;
 
 .v-tabs {
-    &-bar {
-        margin-bottom: 35px;
-    }
 
     .theme--light {
         background: transparent !important;
     }
 
     .v-tab {
-        background: $primary-color;
         box-shadow: $box-shadow;
         color: $primary-text !important;
         border-radius: $border-radius;
         text-transform: none;
         @include transition(0.2s);
-
-        &::before {
-            display: none;
-        }
-
-        &.v-tab--active {
-            background: $secondary-color;
-        }
-
-        &:hover {
-            background: $secondary-color;
-            @include transition(0.2s);
-        }
-
-        .v-icon {
-            color: $primary-text !important;
-        }
     }
-}
-
-.v-tabs-items {
-    background: transparent !important;
 }

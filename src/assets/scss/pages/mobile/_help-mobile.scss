@@ -1,0 +1,59 @@
+@use "../../utils/_index.scss" as *;
+
+.help-mobile {
+    @include page-padding();
+
+    &__wrapper {
+
+        .help-accordion {
+            
+            .accordion-item {
+                margin-bottom: 10px;
+                overflow: hidden;
+
+                .accordion-header {
+                    @include flex-item(flex-start);
+                    @include page-form(10px 15px);
+    
+                    h4 {
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+    
+                    .v-icon {
+                        margin-left: auto;
+                    }
+                }
+    
+                .accordion-body {
+                    margin: 10px 0 0;
+                    padding: 0 10px;
+
+                    .v-expansion-panels {
+                        box-shadow: $box-shadow;
+                        border-radius: $border-radius;
+                    }
+                    .v-expansion-panel {
+                        background: $primary-color;
+                        color: $primary-text;
+                        
+    
+                        &-header {
+                            font-size: 13px;
+                            font-weight: 500;
+                            padding: 10px 15px;
+                            min-height: 44px;
+                        }
+    
+                        &-content {
+                            padding-top: 15px;
+                            font-size: 12px;
+                            font-weight: 300;
+                            background: #304375;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

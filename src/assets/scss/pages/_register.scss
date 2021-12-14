@@ -6,6 +6,11 @@
         text-align: center;
         h1 {
             @include page-header(600, $background-text, 35px);
+
+            @include sm {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
         }
     }
     &__form {
@@ -52,9 +57,22 @@
                 max-width: 280px;
                 margin: auto;
                 .v-btn {
-                    background: $tertiary-gradient;
+                    background: $primary-gradient;
                     color: $c-white;
                 }
+            }
+        }
+
+        @include sm {
+            padding: 20px 15px;
+
+            .register-desc {
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+
+            .form-register {
+                margin-top: 30px;
             }
         }
     }

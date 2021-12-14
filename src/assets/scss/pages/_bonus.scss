@@ -2,4 +2,69 @@
 
 .bonus {
     @include page-padding();
+
+    .tabs-button {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        margin-bottom: 35px;
+
+        &-item {
+            font-size: 23px;
+            font-weight: 600;
+            min-height: 65px;
+            color: $primary-text;
+            background: $primary-color;
+            box-shadow: $box-shadow;
+            padding: 20px;
+            border-radius: $border-radius;
+            cursor: pointer;
+            @include flex-item(center);
+            @include transition(0.2s);
+
+            &:hover {
+                background: $secondary-color;
+                color: $secondary-text;
+            }
+
+            &.active {
+                background: $secondary-color !important;
+                color: $secondary-text !important;
+
+                .v-icon {
+                    color: $secondary-text !important;
+                }
+            }
+        }
+
+        @include sm {
+            grid-gap: 8px;
+            margin-bottom: 15px;
+
+            &-item {
+                font-size: 12px;
+                padding: 10px 10px 8px;
+                flex-direction: column;
+                text-align: center;
+                min-height: auto;
+                white-space: nowrap;
+                border-radius: 5px;
+
+                .v-icon {
+                    font-size: 15px;
+                    margin-right: 0 !important;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .tabs-container {
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .2s ease;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+    }
 }

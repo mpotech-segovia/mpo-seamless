@@ -1,0 +1,65 @@
+@use "../../utils/_index.scss" as *;
+
+.footer-mobile {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    background: $primary-color;
+    color: $primary-text;
+    padding: 18px 5px;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__item {
+        padding: 0 10px;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: $primary-text;
+        }
+
+        .icon {
+            .v-icon {
+                color: rgba($secondary-color, 0.4);
+            }
+        }
+
+        h6 {
+            margin-top: 7px;
+        }
+
+        &.mobile-login {
+            position: relative;
+            @include flex-item(center);
+            align-items: flex-end;
+
+            .icon {
+                position: absolute;
+                top: -55px;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 2px solid $secondary-color;
+                border-radius: 100%;
+                padding: 5px;
+                width: 75px;
+                height: 75px;
+                @include flex-item(center);
+                background: linear-gradient(to bottom,  #1F429C 0%, #13234C 100%);
+
+                .v-icon {
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        &.active {
+            .v-icon {
+                color: $secondary-color;
+            }
+        }
+    }
+}

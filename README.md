@@ -1,4 +1,4 @@
-# mpo-seamless
+# FE-Seamless
 
 ## Project setup
 ```

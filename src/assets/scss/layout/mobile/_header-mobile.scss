@@ -1,0 +1,149 @@
+@use "../../utils/_index.scss" as *;
+@import "../../components/_index.scss";
+
+.header-mobile {
+    margin-bottom: 55px;
+
+    &__wrapper {
+        color: $c-white;
+        background: $header-color;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 6;
+        box-shadow: $box-shadow;
+    }
+
+    &__flex {
+        @include flex-item(flex-start);
+
+        .mobile-logo {
+            @include flex-item(flex-start);
+            
+            img {
+                max-width: 120px;
+            }
+        }
+
+        .mobile-button {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+
+            .refresh {
+                color: $c-white;
+            }
+
+            .amount {
+                background: $primary-gradient;
+                color: $c-white;
+                padding: 0 10px;
+            }
+
+            .navigation-button {
+                background: #203A7D;
+                border-radius: 5px;
+                box-shadow: $box-shadow;
+                height: 32px;
+                width: 35px;
+                @include flex-item(center);
+
+                .v-icon {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .v-navigation-drawer {
+        background: $primary-color;
+        color: $primary-text;
+
+        .drawer-header {
+            padding: 15px;
+            border-bottom: 1px solid rgba($secondary-color, 0.3);
+
+            &__greet {
+                h5 {
+                    font-weight: 500;
+
+                    span {
+                        font-weight: 700;
+                        color: $secondary-color;
+                    }
+                }
+            }
+
+            &__logo {
+                text-align: center;
+                min-height: 70px;
+                padding: 10px;
+                @include flex-item(center);
+
+                img {
+                    @include image-fit(150px, 60px, contain);
+                }
+            }
+
+            &__button {
+                text-align: center;
+                
+                h6 {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 12px;
+                }
+                
+                .form-button {
+                    margin: 5px 0 0;
+
+                    .v-btn {
+                        color: $c-white;
+    
+                        &.login {
+                            background: $primary-gradient;
+                        }
+    
+                        &.register {
+                            background: $secondary-gradient;
+                        }
+                    }
+                }
+
+                .forgot-password {
+
+                    a {
+                        color: $primary-text;
+                        font-size: 12px;
+                        text-decoration: none;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        .drawer-list {
+            a {
+                text-decoration: none;
+                color: $primary-text;
+            }
+
+            &__item {
+                padding: 10px;
+                border-bottom: 1px solid rgba($secondary-color, 0.3);
+                @include flex-item(flex-start);
+
+                .v-icon {
+                    width: 35px;
+                    margin-right: 10px;
+                }
+
+                h5 {
+                    margin-bottom: 0;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@use "../../utils/_index.scss" as *;
+
+.memo {
+    &-create {
+        @include page-form(15px 20px 30px);
+        min-height: auto;
+
+        @include sm {
+            padding: 15px 15px 29px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+
+            .label-textfield {
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+
+        .create-captcha {
+            margin-top: 20px;
+            @include flex-item(flex-start);
+
+            h5 {
+                font-weight: 600;
+            }
+
+            .img-holder {
+                @include flex-item(flex-start);
+                margin-right: 10px;
+                
+                .captcha-img {
+                    margin: 0 10px;
+                    @include flex-item(center);
+
+                    img {
+                        width: 100px;
+                    }
+                }
+
+                .captcha-refresh {
+                    .v-btn {
+                        background: $secondary-color;
+                        color: $secondary-text;
+                    }
+                }
+            }
+
+            .sent-holder {
+                @include flex-item(flex-start);
+
+                .captcha-input {
+                    margin-right: 10px;
+                }
+
+                .captcha-reply {
+                    .v-btn {
+                        background: $primary-gradient;
+                        color: $c-white;
+                    }
+                }
+
+                @include sm {
+                    margin-top: 15px;
+
+                    .captcha-input {
+                        max-width: 150px;
+                    }
+                }
+            }
+        }
+
+        .create-notice {
+            margin-top: 25px;
+            p {
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

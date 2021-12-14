@@ -1,5 +1,8 @@
 <template>
     <div class="lottery">
+        <div class="lotter__mobile-header" v-if="isMobile()">
+            <TitlePage titlePage="LOTTERY"></TitlePage>
+        </div>
         <v-container>
             <div class="lottery__header">
                 <h1>Lottery</h1>
@@ -28,167 +31,180 @@
 </template>
 
 <script>
-import Seo from '@/components/home/Seo.vue'
+    import Seo from '@/components/home/Seo.vue'
+    import TitlePage from '@/components/TitlePage.vue'
 
-export default {
-    name: 'Lottery',
+    export default {
+        name: 'Lottery',
 
-    components: {
-        Seo,
-    },
+        components: {
+            Seo,
+            TitlePage,
+        },
 
-    data() {
-        return {
-            lotteryList: [{
-                imgSrc: require('@/assets/img/flags/1.jpg'),
-                country: 'Tokyo',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/2.jpg'),
-                country: 'Seoul',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/3.jpg'),
-                country: 'Singapore',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/4.jpg'),
-                country: 'Manila',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/5.jpg'),
-                country: 'Barcelona',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/6.jpg'),
-                country: 'Hongkong',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/7.jpg'),
-                country: 'Bangkok',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/8.jpg'),
-                country: 'Berlin',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/9.jpg'),
-                country: 'Milan',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/10.jpg'),
-                country: 'Beijing',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/11.jpg'),
-                country: 'Singapore45',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/12.jpg'),
-                country: 'Timor',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/13.jpg'),
-                country: 'Bullseye',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/14.jpg'),
-                country: 'Hongkong49',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/15.jpg'),
-                country: 'Hongkong47',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/16.jpg'),
-                country: 'Sydneypools',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/17.jpg'),
-                country: 'Magnum4D',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/18.jpg'),
-                country: 'PCSO',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/19.png'),
-                country: 'Amsterdam',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/20.png'),
-                country: '4DRome',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/flags/21.png'),
-                country: 'Siberiapools',
-                date: 'Rabu, 2021-09-22',
-                result: '1239',
-                link: '',
-            },],
-        }
+        data() {
+            return {
+                lotteryList: [{
+                    imgSrc: require('@/assets/img/flags/1.jpg'),
+                    country: 'Tokyo',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/2.jpg'),
+                    country: 'Seoul',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/3.jpg'),
+                    country: 'Singapore',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/4.jpg'),
+                    country: 'Manila',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/5.jpg'),
+                    country: 'Barcelona',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/6.jpg'),
+                    country: 'Hongkong',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/7.jpg'),
+                    country: 'Bangkok',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/8.jpg'),
+                    country: 'Berlin',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/9.jpg'),
+                    country: 'Milan',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/10.jpg'),
+                    country: 'Beijing',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/11.jpg'),
+                    country: 'Singapore45',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/12.jpg'),
+                    country: 'Timor',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/13.jpg'),
+                    country: 'Bullseye',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/14.jpg'),
+                    country: 'Hongkong49',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/15.jpg'),
+                    country: 'Hongkong47',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/16.jpg'),
+                    country: 'Sydneypools',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/17.jpg'),
+                    country: 'Magnum4D',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/18.jpg'),
+                    country: 'PCSO',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/19.png'),
+                    country: 'Amsterdam',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/20.png'),
+                    country: '4DRome',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/flags/21.png'),
+                    country: 'Siberiapools',
+                    date: 'Rabu, 2021-09-22',
+                    result: '1239',
+                    link: '',
+                },],
+            }
+        },
+
+        methods: {
+            isMobile() {
+                if( screen.width <= 906 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        },
     }
-}
 </script>
 
 <style lang="scss" scoped>

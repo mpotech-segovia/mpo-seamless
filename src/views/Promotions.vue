@@ -38,50 +38,70 @@
 </template>
 
 <script>
-import Seo from '@/components/home/Seo.vue'
+    import Seo from '@/components/home/Seo.vue'
 
-export default {
-    name: 'Promotions',
+    export default {
+        name: 'Promotions',
 
-    components: {
-        Seo,
-    },
+        components: {
+            Seo,
+        },
 
-    data() {
-        return {
-            promoList: [{
-                imgSrc: require('@/assets/img/promo-banner.jpg'),
-                promoTitle: 'Promo Slots',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/promo-banner.jpg'),
-                promoTitle: 'Promo Sportsbook',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/promo-banner.jpg'),
-                promoTitle: 'Promo Fishing',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/promo-banner.jpg'),
-                promoTitle: 'Promo Casino',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/promo-banner.jpg'),
-                promoTitle: 'Promo Lottery',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/promo-banner.jpg'),
-                promoTitle: 'Promo Poker',
-                link: '',
-            },],
+        data() {
+            return {
+                promoList: [{
+                    imgSrc: require('@/assets/img/promo-banner.jpg'),
+                    promoTitle: 'Promo Slots',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/promo-banner.jpg'),
+                    promoTitle: 'Promo Sportsbook',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/promo-banner.jpg'),
+                    promoTitle: 'Promo Fishing',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/promo-banner.jpg'),
+                    promoTitle: 'Promo Casino',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/promo-banner.jpg'),
+                    promoTitle: 'Promo Lottery',
+                    link: '',
+                },
+                {
+                    imgSrc: require('@/assets/img/promo-banner.jpg'),
+                    promoTitle: 'Promo Poker',
+                    link: '',
+                },],
+            }
+        },
+
+        methods: {
+            isMobile() {
+                if( screen.width <= 906 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        },
+
+        created() {
+            if (this.isMobile()) {
+                this.$router.push('/promotions-mobile').catch(()=>{});
+            }
+            else {
+                this.$router.push('/promotions').catch(()=>{});
+            }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>

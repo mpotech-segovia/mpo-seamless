@@ -24,7 +24,7 @@
                                     <v-expansion-panel-header>
                                         {{ item.title }}
                                         <template v-slot:actions>
-                                            <v-icon small>fas fa-sort-down</v-icon>
+                                            <v-icon small>fas fa-caret-down</v-icon>
                                         </template>
                                     </v-expansion-panel-header>
                                     <v-expansion-panel-content>
@@ -83,6 +83,26 @@
                     title: 'Penolakan',
                     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus ac quam bibendum gravida amet. Velit dictumst neque a at gravida fermentum in. Nibh tortor blandit vitae ultrices. Blandit laoreet sed pretium ultrices quisque id. Quis morbi ac quam auctor eleifend amet habitasse. Varius praesent vitae cursus sed urna congue eu tristique nibh. Orci condimentum at amet pretium, viverra viverra erat varius semper.'
                 },],
+            }
+        },
+
+        methods: {
+            isMobile() {
+                if( screen.width <= 906 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        },
+
+        created() {
+            if (this.isMobile()) {
+                this.$router.push('/help-mobile').catch(()=>{});
+            }
+            else {
+                this.$router.push('/help').catch(()=>{});
             }
         }
     }

@@ -4,7 +4,7 @@ $body-font-family: 'Poppins', sans-serif;
 $input-font-size: 12px;
 $text-field-dense-padding: 7px 0 7px;
 $text-field-solo-dense-control-min-height: 35px;
-$text-field-solo-label-top: calc(50% - 11px);
+$text-field-solo-label-top: calc(50% - 10px);
 $text-field-solo-control-min-height: 44px;
 $text-field-border-radius: 10px;
 
@@ -33,12 +33,6 @@ $pagination-item-height: 30px;
 $pagination-navigation-width: 29px;
 $pagination-navigation-height: 29px;
 
-/* Tabs */
-$tab-font-size: 23px;
-$tab-font-weight: 600;
-$tabs-item-padding: 30px 16px;
-$tabs-bar-height: 65px;
-
 /* Colors */
 $material-light: (
     (
@@ -52,7 +46,11 @@ $material-light: (
 );
 
 /* Table */
-$data-table-regular-header-font-size: 14px;
-$data-table-regular-row-font-size: 12px;
-
+$data-table-regular-header-font-size: 11px;
+$data-table-regular-row-font-size: 11px;
 $progress-circular-underlay-stroke: #284077;
+$data-table-regular-header-height: 32px;
+$data-table-regular-row-height: 32px;
+
+/* Expansion */
+$expansion-panel-content-padding: 0 15px 15px

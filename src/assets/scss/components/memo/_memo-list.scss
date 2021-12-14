@@ -1,0 +1,72 @@
+@use "../../utils/_index.scss" as *;
+
+.memo {
+    &-list {
+        @include page-form(5px 10px);
+        min-height: 500px;
+
+        @include sm {
+            padding: 0;
+        }
+
+        .v-list {
+            background: transparent;
+
+            .v-list-item__title {
+                color: $page-text;
+                font-weight: 600;
+                
+                @include sm {
+                    font-size: 14px;
+                }
+            }
+
+            .v-list-item__subtitle {
+                color: $page-text;
+
+                &.memo-user {
+                    font-weight: 500;
+                    margin-top: 3px;
+                    color: $page-text;
+
+                    @include sm {
+                        font-size: 12px;
+                    }
+                }
+
+                &.memo-content {
+                    font-size: 12px;
+                    margin-top: 2px;
+                    color: rgba(255,255,255,0.8);
+
+                    @include sm {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .v-list-item__action-text {
+                color: rgba(255,255,255,0.7) !important;
+
+                @include sm {
+                    font-size: 10px;
+                }
+            }
+
+            .v-chip {
+                &.New {
+                    background: #1DBC60;
+                    color: $c-white;
+                }
+                &.Read {
+                    background: #E04A3A;
+                    color: $c-white;
+                }
+            }
+
+            .v-list-item {
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+            }
+        }
+    }
+}

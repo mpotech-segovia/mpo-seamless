@@ -1,0 +1,46 @@
+@use "../../utils/_index.scss" as *;
+
+.home__slider {
+    .v-carousel {
+        height: 500px !important;
+
+        .slider-jackpot {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            background: #2849a1 url('~@/assets/img/slider-img/bg-jackpot.png');
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: $border-radius;
+            padding: 20px;
+            min-width: 400px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h3 {
+                color: $secondary-color;
+                font-size: 25px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            @include sm {
+                display: none;
+            }
+        }
+
+        @include sm {
+            height: 155px !important;
+        }
+
+        @include tablet {
+            height: 378px !important;
+        }
+    }
+}

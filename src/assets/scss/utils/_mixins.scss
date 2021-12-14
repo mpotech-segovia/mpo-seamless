@@ -45,10 +45,14 @@
 
 @mixin page-padding() {
 	padding: 25px 0;
+
+	@include sm {
+		padding: 10px 0;
+	}
 }
 
 @mixin sm {
-    @media (min-width: $small-phone) and (max-width: $phone) {
+    @media (min-width: $small-phone) and (max-width: $tablet) {
         @content;
     }
 }

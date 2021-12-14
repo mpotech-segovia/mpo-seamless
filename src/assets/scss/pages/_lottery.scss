@@ -8,6 +8,10 @@
         h1 {
             @include page-header(600, $background-text, 35px);
         }
+
+        @include sm {
+            display: none;
+        }
     }
 
     &__list {

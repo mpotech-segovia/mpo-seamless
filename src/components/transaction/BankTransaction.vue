@@ -96,5 +96,5 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '@/assets/scss/pages/_bank-transaction.scss';
+    @import '@/assets/scss/components/transaction/_bank-transaction.scss';
 </style>

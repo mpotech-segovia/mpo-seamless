@@ -1,0 +1,44 @@
+@use "../../utils/_index.scss" as *;
+
+.popular-mobile {
+    @include page-padding();
+
+    &__category-list {
+        .provider-list-wrapper {
+            margin-top: 0;
+        }
+    }
+
+    &__game-list {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        @include page-form(10px);
+
+        .game-item {
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            border-radius: $border-radius;
+            border: 1px solid rgba(255,255,255,0.15);
+
+            a {
+                text-decoration: none;
+                color: $primary-text;
+            }
+
+            .game-img {
+                padding: 10px 5px 0;
+                img {
+                    @include image-fit(100%, 85px, contain);
+                }
+            }
+
+            .game-title {
+                padding: 0 10px 8px;
+                font-weight: 500;
+                font-size: 11px;
+                @include text-elipsis();
+            }
+        }
+    }
+}

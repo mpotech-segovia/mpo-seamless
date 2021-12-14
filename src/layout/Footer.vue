@@ -126,6 +126,10 @@ export default {
                 link: ''
             },]
         }
+    },
+
+    methods: {
+        
     }
 }
 </script>

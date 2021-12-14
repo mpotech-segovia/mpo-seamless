@@ -81,7 +81,7 @@
                 position: relative;
 
                 img {
-                    @include image-fit(100%, 250px, cover);
+                    width: 100%;
                     @include transition(0.2s);
                 }
 

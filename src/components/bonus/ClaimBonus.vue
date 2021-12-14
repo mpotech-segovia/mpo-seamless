@@ -92,5 +92,5 @@
 </script>
 
 <style lang="scss">
-    @import '@/assets/scss/pages/_claim-bonus.scss';
+    @import '@/assets/scss/components/bonus/_claim-bonus.scss';
 </style>

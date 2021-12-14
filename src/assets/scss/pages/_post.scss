@@ -1,0 +1,183 @@
+@use "../utils/_index.scss" as *;
+
+.post {
+    @include page-padding(); 
+
+    &__wrapper {
+
+        .post-content {
+            @include page-form(25px 20px);
+
+            .post-img {
+                text-align: center;
+
+                img {
+                    max-width: 80%;
+                }
+            }
+
+            .post-date {
+                @include flex-item(center);
+                margin: 5px 0 10px;
+
+                .v-chip {
+                    background: $secondary-color;
+                    color: $secondary-text;
+                    height: 20px;
+                }
+
+                .date {
+                    @include flex-item(center);
+
+                    .v-icon {
+                        margin: 0 5px 0 15px;
+                    }
+
+                    h5 {
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .post-title {
+                font-size: 30px;
+                font-weight: 600;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .post-info {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .post-recent {
+            @include page-form(25px 20px);
+
+            .recent-title {
+                border-bottom: 2px solid rgba(255,255,255,0.2);
+                padding-bottom: 5px;
+            }
+
+            .recent-item {
+                @include flex-item(flex-start);
+                flex-wrap: nowrap;
+                padding-top: 15px;
+
+                .item-img {
+                    margin-right: 15px;
+
+                    img {
+                        @include image-fit(190px, 110px, cover);
+                    }
+                }
+
+                .item-content {
+                    overflow: hidden;
+
+                    .content-date {
+                        @include flex-item(flex-start);
+                        margin-bottom: 10px;
+
+                        .v-chip {
+                            background: $secondary-color;
+                            color: $secondary-text;
+                        }
+        
+                        .date {
+                            @include flex-item(center);
+        
+                            .v-icon {
+                                margin: 0 5px 0 15px;
+                            }
+        
+                            h6 {
+                                font-weight: 500;
+                                color: $page-text;
+                            }
+                        }
+                    }
+
+                    .content-title {
+                        color: $c-white;
+                        margin-bottom: 10px;
+                        font-style: underline;
+                        min-height: 48px;
+
+                        h4 {
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .content-button {
+                        .v-btn {
+                            background: $primary-gradient;
+                            color: $c-white;
+                        }
+                    }
+                }
+
+                &:hover {
+
+                    img {
+                        filter: grayscale(100%);
+                        @include transition(0.15s);
+                    }
+
+                    .content-title {
+                        color: $secondary-color;
+                        text-decoration: underline;
+                        @include transition(0.15s);
+                    }
+                }
+
+                @include laptop {
+                    flex-direction: column;
+                    border-bottom: 0;
+                    padding-bottom: 15px;
+                    background: rgba(0,0,0,0.2);
+                    margin-top:  15px;
+                    padding: 20px 10px;
+                    border: 1px solid rgba(255,255,255,0.2);
+                    .item-img {
+                        img {
+                            @include image-fit(100%, 150px, cover);
+                        }
+                    }
+
+                    .item-content {
+                        text-align: center;
+
+                        .content-date {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+            .recent-button {
+                text-align: right;
+                margin-top: 20px;
+                
+                .v-btn {
+                    background: $primary-gradient;
+                    color: $c-white;
+                }
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            @include sm {
+                display: none;
+            }
+        }
+    }
+}

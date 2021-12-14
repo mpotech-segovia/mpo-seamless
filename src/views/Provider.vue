@@ -25,65 +25,85 @@
 </template>
 
 <script>
-import Seo from '@/components/home/Seo.vue'
+    import Seo from '@/components/home/Seo.vue'
 
-export default {
-    name: 'Provider',
+    export default {
+        name: 'Provider',
 
-    components: {
-        Seo,
-    },
+        components: {
+            Seo,
+        },
 
-    data() {
-        return {
-            providerList: [{
-                imgSrc: require('@/assets/img/provider-banner/wm.jpg'),
-                providerName: 'WM CASINO',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/sexy.jpg'),
-                providerName: 'SEXY GAMING',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/n2live.jpg'),
-                providerName: 'WM CASINO',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/og.jpg'),
-                providerName: 'OG CASINO',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/pplc.jpg'),
-                providerName: 'PRAGMATIC PLAY LC',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/ag.jpg'),
-                providerName: 'ASIA GAMING',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/gd88.jpg'),
-                providerName: 'GD88',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/dream.jpg'),
-                providerName: 'DREAM GAMING',
-                link: '',
-            },
-            {
-                imgSrc: require('@/assets/img/provider-banner/lg88.jpg'),
-                providerName: 'LG88',
-                link: '',
-            },]
+        data() {
+            return {
+                providerList: [{
+                    imgSrc: require('@/assets/img/provider-banner/wm.jpg'),
+                    providerName: 'WM CASINO',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/sexy.jpg'),
+                    providerName: 'SEXY GAMING',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/n2live.jpg'),
+                    providerName: 'WM CASINO',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/og.jpg'),
+                    providerName: 'OG CASINO',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/pplc.jpg'),
+                    providerName: 'PRAGMATIC PLAY LC',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/ag.jpg'),
+                    providerName: 'ASIA GAMING',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/gd88.jpg'),
+                    providerName: 'GD88',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/dream.jpg'),
+                    providerName: 'DREAM GAMING',
+                    link: '#/game',
+                },
+                {
+                    imgSrc: require('@/assets/img/provider-banner/lg88.jpg'),
+                    providerName: 'LG88',
+                    link: '#/game',
+                },]
+            }
+        },
+
+        methods: {
+            isMobile() {
+                if( screen.width <= 906 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        },
+
+        created() {
+            if (this.isMobile()) {
+                this.$router.push('/provider-mobile').catch(()=>{});
+            }
+            else {
+                this.$router.push('/provider').catch(()=>{});
+            }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>

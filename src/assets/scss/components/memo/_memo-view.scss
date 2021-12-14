@@ -1,0 +1,149 @@
+@use "../../utils/_index.scss" as *;
+
+.memo {
+    &-view {
+        @include page-form(15px 20px 30px);
+        min-height: 500px;
+
+        @include sm {
+            padding: 15px 15px 29px;
+        }
+
+        .view-header {
+            @include flex-item(flex-start);
+            flex-wrap: nowrap;
+            margin-bottom: 15px;
+
+            .view-subject {
+                h4 {
+                    font-weight: 600;
+                }
+
+                h6 {
+                    font-weight: 500;
+                    color: rgba(255,255,255,0.7);
+                }
+            }
+            
+            .back-to-list {
+                margin-left: auto;
+                padding-left: 15px;
+
+                .v-btn {
+                    background: $secondary-color;
+                    color: $secondary-text;
+                }
+            }
+        }
+
+        .view-content {
+            font-size: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .view-reply {
+            margin-top: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+
+            .reply-header {
+                @include flex-item(flex-start);
+                margin-bottom: 15px;
+
+                .header-avatar {
+                    margin-right: 15px;
+                    background: rgba(255,255,255,0.3);
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255,255,255,0.5);
+                    @include flex-item(center);
+
+                    .v-icon {
+                        color: rgba(255,255,255,0.8);
+                    }
+                }
+
+                .header-info {
+                    h5 {
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                    }
+
+                    h6 {
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.7);
+
+                        .v-icon {
+                            color: rgba(255,255,255,0.7);
+                            margin-right: 3px;
+                        }
+                    }
+                }
+            }
+
+            .reply-content {
+                font-size: 12px;
+            }
+        }
+
+        .view-form {
+            padding-top: 25px;
+
+            h5 {
+                font-weight: 600;
+            }
+
+            .form-captcha {
+                margin-top: 20px;
+                @include flex-item(flex-start);
+
+                .img-holder {
+                    @include flex-item(flex-start);
+                    margin-right: 10px;
+
+                    .captcha-img {
+                        margin: 0 10px;
+                        @include flex-item(center);
+    
+                        img {
+                            width: 100px;
+                        }
+                    }
+    
+                    .captcha-refresh {
+                        .v-btn {
+                            background: $secondary-color;
+                            color: $secondary-text;
+                        }
+                    }
+                }
+
+                .sent-holder {
+                    @include flex-item(flex-start);
+
+                    .captcha-input {
+                        margin-right: 15px;
+                    }
+    
+                    .captcha-reply {
+                        .v-btn {
+                            background: $primary-gradient;
+                            color: $c-white;
+                        }
+                    }
+
+                    @include sm {
+                        margin-top: 15px;
+
+                        .captcha-input {
+                            max-width: 150px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
