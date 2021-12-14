@@ -64,12 +64,12 @@ export default {
 
     methods: {
         headerDate() {
-            this.date = moment().format('ddd, MMMM D, h:mm:ss A');
+            this.date = moment().format('ddd, MMM DD, h:mm:ss A');
         },
     },
     
     created() {
-        this.date = moment().format('ddd, MMMM D, h:mm:ss A');
+        this.date = moment().format('ddd, MMM DD, h:mm:ss A');
         setInterval(() => {
             this.headerDate()
         }, 1000);

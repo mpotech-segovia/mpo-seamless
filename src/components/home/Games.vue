@@ -40,21 +40,30 @@
                     <div class="list-search">
                         <v-text-field label="Search" v-model="searchGame" solo hide-details flat clearable append-icon="fas fa-search"></v-text-field>
                     </div>
+                    <div class="list-button">
+                        <v-btn class="see-more" rounded small to="/game">SEE MORE</v-btn>
+                    </div>
+                    <div class="list-pagination">
+                        <v-btn class="pagination pagination-prev" icon small>
+                            <v-icon small>fas fa-angle-left</v-icon>
+                        </v-btn>
+                        <v-btn class="pagination pagination-prev" icon small>
+                            <v-icon small>fas fa-angle-right</v-icon>
+                        </v-btn>
+                    </div>
                 </div>
                 <div class="list-grid">
                     <span v-for="(item, i) in filteredGame" :key="i">
                         <div class="game-holder">
                             <a :href="item.link">
                                 <div class="game-img">
+                                    <div class="skeleton-loading" v-show="skeletonLoading"></div>
                                     <img :src="item.imgSrc" alt="">
                                 </div>
                                 <h5 class="game-title">{{ item.gameTitle }}</h5>
                             </a>
                         </div>
                     </span>
-                </div>
-                <div class="list-pagination">
-                    <v-pagination v-model="page" :length="3" :total-visible="3" prev-icon="fas fa-caret-left" next-icon="fas fa-caret-right"></v-pagination>
                 </div>
             </div>
         </v-container>
@@ -73,7 +82,7 @@
 
         data() {
             return {
-                page: 1,
+                skeletonLoading: true,
                 searchGame: '',
                 gameList: [{
                     imgSrc: require('@/assets/img/game-img/1.jpg'),
@@ -145,15 +154,37 @@
                     gameTitle: 'Bigger Bass Bonanza',
                     link: '#',
                 },
-                ]
+                {
+                    imgSrc: require('@/assets/img/game-img/1.jpg'),
+                    gameTitle: 'Phoenix Forge',
+                    link: '#',
+                },
+                {
+                    imgSrc: require('@/assets/img/game-img/2.jpg'),
+                    gameTitle: 'Empty The Bank',
+                    link: '#',
+                },]
             }
         },
+
+        mounted() {
+            setTimeout(() => {
+                this.skeletonLoadingState(false)
+            }, 3000);
+        },
+
+        methods: {
+            skeletonLoadingState (value) {
+                this.skeletonLoading = value
+            }
+        },
+
         computed: {
             filteredGame() {
                 return this.gameList.filter(item => {
                     return item.gameTitle.toLowerCase().includes(this.searchGame.toLowerCase())
                 })
             }
-        }
+        },
     }
 </script>

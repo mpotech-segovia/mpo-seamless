@@ -24,8 +24,7 @@
             max-width: 200px;
             margin: auto;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.15);
-            @include transition(0.15s);
+            border: 2px solid rgba(255,255,255,0.1);
 
             .lottery-flag {
                 img {
@@ -45,16 +44,15 @@
 
                 .result {
                     font-size: 40px;
-                    @include transition(0.15s);
                 }
             }
 
             &:hover {
-                border: 1px solid rgba(255,255,255,0.3);
+                border: 2px solid $secondary-color;
                 @include transition(0.15s);
 
                 .result {
-                    color: #ffe600;
+                    color: $secondary-color;
                     @include transition(0.15s);
                 }
             }

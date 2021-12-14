@@ -31,6 +31,11 @@ const routes = [
     component: () => import('../views/mobile/GameMobile.vue')
   },
   {
+    path: '/game-frame',
+    name: 'GameFrame',
+    component: () => import('../views/GameFrame.vue')
+  },
+  {
     path: '/popular-mobile',
     name: 'PopularMobile',
     component: () => import('../views/mobile/PopularMobile.vue')

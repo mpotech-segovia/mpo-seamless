@@ -1,0 +1,60 @@
+@use "../utils/_index.scss" as *;
+
+.game-frame {
+    @include page-padding();
+    min-height: 80vh;
+
+    &__header {
+        @include page-form(15px 20px);
+        @include flex-item(flex-start);
+        max-width: 1300px;
+        margin: 0 auto 20px;
+        
+        .header-settings {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+
+            .settings-fullscreen {
+                margin-right: 15px;
+                .v-btn {
+                    background: rgba(255,255,255,0.1);
+                    color: $secondary-text;
+
+                    &.active {
+                        background: $secondary-color;
+                    } 
+                }
+            }
+
+            .settings-close {
+                .v-btn {
+                    background: rgba(#e7666a, 0.3);
+
+                    .v-icon {
+                        color: #e7666a;
+                    }
+                }
+            }
+        }
+    }
+
+    &__iframe {
+        position: relative;
+        display: block;
+        max-width: 1300px;
+        height: 650px;
+        margin: auto;
+        background-color: #131521;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        overflow: hidden;
+        flex: 1 1 auto;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            overflow: unset;
+        }
+    }
+}
