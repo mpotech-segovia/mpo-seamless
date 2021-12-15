@@ -1,14 +1,14 @@
 <template>
     <div class="game-frame">
         <v-container>
-            <fullscreen v-model="fullscreen" :teleport="teleport" :page-only="pageOnly">
+            <fullscreen v-model="fullscreen">
                 <div class="game-frame__container fullscreen-wrapper">
                     <div class="game-frame__header">
                         <h4>Ambrosia</h4>
                         <div class="header-settings">
                             <div class="settings-fullscreen">
                                 <v-btn class="fullscreen" :class="{ active : fullscreen }" fab small depressed
-                                    @click="toggle">
+                                    @click="toggleFullscreen">
                                     <v-icon small v-show="!fullscreen">fas fa-expand</v-icon>
                                     <v-icon small v-show="fullscreen">fas fa-compress</v-icon>
                                 </v-btn>
@@ -44,12 +44,10 @@
         data () {
             return {
                 fullscreen: false,
-                teleport: false,
-                pageOnly: false
             }
         },
         methods: {
-            toggle () {
+            toggleFullscreen () {
                 this.fullscreen = !this.fullscreen
             }
         }
