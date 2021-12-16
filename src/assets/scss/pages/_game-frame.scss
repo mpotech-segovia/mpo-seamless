@@ -16,10 +16,10 @@
             align-items: center;
 
             .settings-fullscreen {
-                margin-right: 15px;
                 .v-btn {
                     background: rgba(255,255,255,0.1);
                     color: $secondary-text;
+                    margin-right: 15px;
 
                     &.active {
                         background: $secondary-color;
@@ -39,41 +39,34 @@
         }
     }
 
-    &__iframe-not-active {
-        position: relative;
-        display: block;
+    &__iframe {
         max-width: 1300px;
         height: 65vh;
         margin: auto;
-        background-color: #131521;
+        background: #131521;
         border-radius: $border-radius;
-        box-shadow: $box-shadow;
+        $box-shadow: $box-shadow;
         overflow: hidden;
-        flex: 1 1 auto;
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            overflow: unset;
-        }
-    }
-
-    &__iframe-active {
         position: relative;
-        display: block;
-        max-width: 100%;
-        height: 90vh;
-        margin: auto;
-        background-color: #131521;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        overflow: hidden;
-        flex: 1 1 auto;
 
-        iframe {
-            width: 100%;
+        .iframe-loading {
             height: 100%;
-            overflow: unset;
+            @include flex-item(center);
+            
+            h2 {
+                font-weight: 600;
+            }
+        }
+
+        &-active {
+            max-width: 100%;
+            height: 90vh;
+
+            .game-balloon {
+                width: 100%;
+                height: 90vh;
+                top: 110px;
+            }
         }
     }
 }

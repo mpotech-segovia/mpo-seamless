@@ -4,7 +4,7 @@
             <fullscreen v-model="fullscreen">
                 <div class="game-frame__container fullscreen-wrapper">
                     <div class="game-frame__header">
-                        <h4>Ambrosia</h4>
+                        <h4>Death Benediction</h4>
                         <div class="header-settings">
                             <div class="settings-fullscreen">
                                 <v-btn class="fullscreen" :class="{ active : fullscreen }" fab small depressed
@@ -20,11 +20,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="game-frame__iframe-not-active" v-show="!fullscreen">
-                        <iframe src="https://cf-mt-cdn2.relaxg.com/casino/launcher.html?partner=twin&gameid=artoandthesevendeadlyspinsmegaways&lang=en_US&partnerid=186&ticket=&moneymode=fun&homeurl=https://games-twincasino.igamingcloud.com/Redirect/Lobby&jurisdiction=MT&channel=web" frameborder="0"></iframe>
+                    <div class="game-frame__iframe" v-show="!fullscreen">
+                        <div class="iframe-loading">
+                            <h2>Loading...</h2>
+                        </div>
+                        <!-- <GameBalloon></GameBalloon> -->
                     </div>
                     <div class="game-frame__iframe-active" v-show="fullscreen">
-                        <iframe src="https://cf-mt-cdn2.relaxg.com/casino/launcher.html?partner=twin&gameid=artoandthesevendeadlyspinsmegaways&lang=en_US&partnerid=186&ticket=&moneymode=fun&homeurl=https://games-twincasino.igamingcloud.com/Redirect/Lobby&jurisdiction=MT&channel=web" frameborder="0"></iframe>
+                        <!-- <GameBalloon></GameBalloon> -->
                     </div>
                 </div>
             </fullscreen>
@@ -34,12 +37,14 @@
 
 <script>
     import { component } from 'vue-fullscreen'
+    // import GameBalloon from '@/components/GameBalloon.vue'
 
     export default {
         name: 'GameFrame',
 
         components: {
-            fullscreen: component
+            fullscreen: component,
+            // GameBalloon
         },
         data () {
             return {
@@ -47,9 +52,10 @@
             }
         },
         methods: {
-            toggleFullscreen () {
+            toggleFullscreen() {
                 this.fullscreen = !this.fullscreen
-            }
+            },
+
         }
     }
 </script>
